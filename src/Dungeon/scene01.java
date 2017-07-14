@@ -52,6 +52,6 @@ public class scene01 {
 	}
 	
 	public static void main(String args[]){
-		scene01 sc = new scene01(10, 5);
+		scene01 sc = new scene01(3, 5);
 	}
 }
