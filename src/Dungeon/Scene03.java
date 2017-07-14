@@ -1,5 +1,8 @@
+package Dungeon;
 import java.util.Random;
 import java.util.Scanner;
+
+import Monster;
 //
 public class Scene03 {
 	Hero hero;
