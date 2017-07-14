@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class PotionScene {
 	Hero hero;
 	
-	// The following types of potions correspond to each 
+	// The following types of potions correspond to each //
 	static int[] potions = {0, 1, 2, 3};
 	int potionInit = 0;
 	

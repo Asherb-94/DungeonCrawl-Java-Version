@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-
+//
 public class Scene03 {
 	Hero hero;
 
