@@ -1,14 +1,15 @@
 package Dungeon;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Intro {
 
 	public static final char[] buffer = new char[132];
-	public static final actor hero;
+	public Hero hero;
 	
-	public void intro()
+	public void intro() throws IOException
 	{
 		char answer;
 		Scanner scan = new Scanner(System.in);
@@ -28,7 +29,7 @@ public class Intro {
 	    	System.out.println("  You turn tail and run.  ");
 	    	System.out.println("  From the trees around you, wood nymphs giggle derisively. \n\n");
 	    	System.out.println("  In your panic, you step on a bear trap and die.\n");
-	    	hero.hitPoints = 0;
+	    	hero.setHitPoints(0);
 	    	//hero name now becomes coward TODO 
 	    }
 	    else
@@ -52,16 +53,8 @@ public class Intro {
 		        else
 		        {
 		        	System.out.println("\n Now *thats* a Heroic name\n");
-		        }
-	    		
-	    	}
-	    	
-	    	
-	        
-	        
-	    }
-		
-		
+		        }	    		
+	    	}	        
+	    }		
 	}
-
 }
