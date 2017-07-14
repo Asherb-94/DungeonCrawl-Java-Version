@@ -40,7 +40,7 @@ public abstract class DungeonCrawl extends Scenes{
 	
 	static void sceneSelect( int scene )
 	{
-	  if      ( scene== 0 ) scene00(  0, 0 );  /* monster-hitpoints, monster-strength  */
+	  if      ( scene== 0 ) scene00();  /* monster-hitpoints, monster-strength  */
 	  else if ( scene== 1 ) scene01(  2, 2 );
 	  else if ( scene== 2 ) scene02(  0, 0 );
 	  else if ( scene== 3 ) scene03(  3, 3 );
