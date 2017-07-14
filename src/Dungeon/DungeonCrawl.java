@@ -108,18 +108,19 @@ public  class DungeonCrawl {
 			  if ( hero.getHitPoints() <= 0 )
 			  {
 			    System.out.print("\n\nYou Lose.\n");
-			    rip( hero.getName() );
+			    RIP objRIP = new RIP();
+			    objRIP.display();
 			  }
 			  else
 			  {
-			    printf("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");
-			    printf("  You now have %2d pieces of gold and have WON the game.\n\n", hero.gold+=100 );
-			    printf("            (Hit enter)"); 
-			    gets( buffer ); 
+			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");
+			    System.out.print("  You now have %2d pieces of gold and have WON the game.\n\n" + hero.getGold()+100 );
+			    System.out.print("            (Hit enter)"); 
+/*			    gets( buffer ); 
 			    system("cls");
 			    winner( hero.gold );
 			    printf("\n\n\n            (Hit enter)"); 
-			    gets( buffer );
+			    gets( buffer );*/
 			  }
 			  
 			  
