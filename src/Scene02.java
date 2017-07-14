@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Scene02 {
-	// TODO
+	// TODO //
 	Hero hero;
 	
 	public Scene02(int monsterHit, int monsterStr){
