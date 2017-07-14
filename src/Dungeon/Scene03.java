@@ -15,7 +15,7 @@ public class Scene03 {
 		Monster monster = new Monster("Mouse", monsterHit, monsterStr, 0);
 		monster.Summary();
 		
-		//TODO sortie();
+		TODO sortie();
 		
 		if (hero.getHitPoints() > 0 && monster.getHitPoints() <= 0){
 			scene03part2();
