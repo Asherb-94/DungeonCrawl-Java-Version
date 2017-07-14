@@ -1,10 +1,12 @@
+package Dungeon;
 import java.util.Random;
 import java.util.Scanner;
+
 //
 public class Scene03 {
 	Hero hero;
 
-	public void scene03(){
+	public void scene03(int monsterHit, int monsterStr){
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");
@@ -12,7 +14,7 @@ public class Scene03 {
 		Monster monster = new Monster("Mouse", monsterHit, monsterStr, 0);
 		monster.Summary();
 		
-		//TODO sortie();
+		sortie sortie = new sortie(hero, monster);
 		
 		if (hero.getHitPoints() > 0 && monster.getHitPoints() <= 0){
 			scene03part2();

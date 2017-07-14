@@ -1,3 +1,4 @@
+package Dungeon;
 import java.util.Random;
 import java.util.Scanner;
 

@@ -1,3 +1,4 @@
+package Dungeon;
 public class Scene00 {
 	//TODO get external hero //
 	public static Hero hero;
