@@ -1,7 +1,7 @@
 package Dungeon;
 import java.util.Scanner;
 
-public class DungeonCrawl {
+public class DungeonCrawl extends Scenes {
 	Actor hero; //The hero object    -- constantly updated by the game
 	Actor monster; //The monster object -- constantly updated by the game
 	 
@@ -72,7 +72,7 @@ public class DungeonCrawl {
 		}
 		makeActor("N",4,4,0);
 		Intro obj = new Intro();
-		obj.intro();
+		obj.intro();s
 		
 		while (hero.hitPoints() > 0 && scene <= 6)//MAXSCENE is a class, Actor is too for hero
 		{
@@ -96,6 +96,62 @@ public class DungeonCrawl {
 		
 		
 
+	}
+
+
+	@Override
+	void scene00(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void scene01(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void scene02(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void scene03(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void scene04(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void scene05(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void scene06(int monsterHit, int monsterStr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	void potionScene() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
