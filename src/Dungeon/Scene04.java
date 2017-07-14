@@ -8,7 +8,7 @@ public class Scene04 {
 	Scanner scanner = new Scanner(System.in);
 	
 	// start //
-	private Scene04(int monsterHit, int monsterStr){
+	public Scene04(int monsterHit, int monsterStr){
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
 		

@@ -5,14 +5,40 @@ public abstract class Scenes {
 	
 	
 	
-	abstract void scene00( int monsterHit, int monsterStr );
-	abstract void scene01( int monsterHit, int monsterStr );
-	abstract void scene02( int monsterHit, int monsterStr );
-	abstract void scene03( int monsterHit, int monsterStr );
-	abstract void scene04( int monsterHit, int monsterStr );
-	abstract void scene05( int monsterHit, int monsterStr );
-	abstract void scene06( int monsterHit, int monsterStr );
+	static void scene00( ) {
+		Scene00 objScene00 = new Scene00();
+		
+		
+	}
+	static void scene01( int monsterHit, int monsterStr ) {
+		scene01 objScene01 = new scene01(monsterHit,monsterStr);
+		
+		
+	}
+	static void scene02( int monsterHit, int monsterStr ) {
+		Scene02 objScene02 = new Scene02(monsterHit,monsterStr);
+		
+	}
+	static void scene03( int monsterHit, int monsterStr ) {
+		Scene03 objScene03 = new Scene03(monsterHit,monsterStr);
+		
+	}
+	static void scene04( int monsterHit, int monsterStr ) {
+		Scene04 objScene04 = new Scene04(monsterHit,monsterStr);
+		
+	}
+	static void scene05( int monsterHit, int monsterStr ) {
+		
+		
+	}
+	static void scene06( int monsterHit, int monsterStr ) {
+		
+		
+	}
 
-	abstract void potionScene();
+	static void potionScene() {
+		
+		
+	}
 
 }

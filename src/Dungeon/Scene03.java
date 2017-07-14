@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Scene03 {
 	Hero hero;
 
-	public void scene03(int monsterHit, int monsterStr){
+	public Scene03(int monsterHit, int monsterStr){
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");
