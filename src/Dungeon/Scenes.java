@@ -1,3 +1,4 @@
+package Dungeon;
 
 public abstract class Scenes {
 	public static final int MAXSCENE = 6;

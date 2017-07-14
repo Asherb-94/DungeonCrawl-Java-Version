@@ -1,3 +1,4 @@
+package Dungeon;
 import java.util.Scanner;
 
 public class DungeonCrawl {

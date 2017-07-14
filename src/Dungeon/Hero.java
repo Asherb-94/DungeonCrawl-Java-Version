@@ -1,6 +1,6 @@
-
-public class Monster {
-	private int hitPoints;
+package Dungeon;
+public class Hero {
+	  private int hitPoints;
 	  private int maxHitPoints;
 	  private int strength;
 	  private int maxStrength;
@@ -8,7 +8,7 @@ public class Monster {
 	  private int gold;
 	  private String name;
 	  
-	  public Monster(String name, int hitPoints, int strength, int gold){
+	  public Hero(String name, int hitPoints, int strength, int gold){
 		  this.name = name;
 		  this.hitPoints = hitPoints;
 		  this.maxHitPoints = hitPoints;
@@ -18,7 +18,7 @@ public class Monster {
 	  }
 	  
 	  public void Summary(){
-		  System.out.println("Monster " + ": " + this.hitPoints + "/" 
+		  System.out.println("Hero " + this.name +": " + this.hitPoints + "/" 
 				  + this.maxHitPoints + "HP; " + this.strength + "/" + this.maxStrength 
 				  + " ST; " + this.gold + "Gold");
 	  }
@@ -70,8 +70,9 @@ public class Monster {
 	public void setGold(int gold) {
 		this.gold = gold;
 	}
-	
+	  
 	public String getName(){
 		return this.name;
 	}
+	  
 }
