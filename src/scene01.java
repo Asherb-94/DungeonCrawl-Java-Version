@@ -18,7 +18,7 @@ public class scene01 {
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		monster.Summary();
 		//TODO
-		//sortie();
+		sortie();
 		if(monster.getHitPoints()<=0 && hero.getHitPoints()>0){
 			part2();
 		}

@@ -35,7 +35,7 @@ public class Scene02 {
 				ans = scanner.nextLine();
 				if (ans.equals("y") || ans.equals("Y")){
 					System.out.println("\nYour hit points are restored.");
-					hero.hitPoints = hero.maxHitPoints;
+					hero.setHitPoints(hero.getMaxHitPoints());
 				}
 			}
 			else if (rand == 3){
@@ -45,7 +45,7 @@ public class Scene02 {
 				ans = scanner.nextLine();
 				if (ans.equals("y") || ans.equals("Y")){
 					System.out.println("\nYour strength is increased.\n\n");
-					hero.maxStrength++;
+					hero.setMaxStrength(hero.getMaxStrength()+1);
 				}
 			}
 			else if (rand == 4){
@@ -55,7 +55,7 @@ public class Scene02 {
 				ans = scanner.nextLine();
 				if (ans.equals("y") || ans.equals("Y")){
 					System.out.println("\nYou feel ill.\n\n");
-					hero.maxStrength--;
+					hero.setMaxStrength(hero.getMaxStrength()-1);
 				}
 			}
 			else {

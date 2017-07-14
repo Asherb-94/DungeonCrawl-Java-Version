@@ -2,23 +2,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Scene03 {
-	Actor hero;
-	Actor monster;
+	Hero hero;
+
 	public void scene03(){
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");
 		
-		monster.name = "Mouse";
-		//TODO make monsterHit and monsterStr variables
-		//monster.hitPoints = monsterHit;
-		//monster.strength = monsterStr;
-		monster.potions = 0;
+		Monster monster = new Monster("Mouse", monsterHit, monsterStr, 0);
+		monster.Summary();
 		
-		//TODO monsterSummary();
 		//TODO sortie();
 		
-		if (hero.hitPoints > 0 && monster.hitPoints <= 0){
+		if (hero.getHitPoints() > 0 && monster.getHitPoints() <= 0){
 			scene03part2();
 		}
 	}
@@ -38,7 +34,7 @@ public class Scene03 {
 			if (toss < 3){
 				System.out.println("Your actions show disrespect for the fallen.");
 				System.out.println("You lose a hit point.");
-				hero.hitPoints--;
+				hero.setHitPoints(hero.getHitPoints()-1);
 			}
 			else if (toss <= 10){
 				System.out.println("The mouse vanishes into the darkness.");
@@ -46,7 +42,7 @@ public class Scene03 {
 			else {
 				System.out.println("The corpse bursts open, spilling " + toss + " gold coins!");
 				System.out.println("You pocket the gold and move on.");
-				hero.gold += toss;
+				hero.setGold(hero.getGold()+toss);
 			}
 		}
 	}
