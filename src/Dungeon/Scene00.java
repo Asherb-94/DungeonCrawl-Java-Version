@@ -1,7 +1,7 @@
 package Dungeon;
 public class Scene00 {
 	//TODO get external hero //
-	public static Hero hero;
+	public static Hero hero = new Hero("Lydia", 5, 5, 0);
 
 	public static void main(String[] args) {
 		System.out.println("\n\n\n\nYou enter the mine and walk a few feet.");

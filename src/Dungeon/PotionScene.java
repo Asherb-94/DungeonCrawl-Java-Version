@@ -3,13 +3,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class PotionScene {
+	//TODO need external hero
+	//public static Hero hero = new Hero("Lydia", 5, 5, 0);
 	Hero hero;
 	
 	// The following types of potions correspond to each //
 	static int[] potions = {0, 1, 2, 3};
 	int potionInit = 0;
 	
-	private void potionScene(){
+	public PotionScene(){
 		int toss;
 		int tossA;
 		int tossB;
@@ -70,6 +72,11 @@ public class PotionScene {
 				hero.setHitPoints(hero.getHitPoints()-1);
 			}
 		hero.setMaxHitPoints(hero.getMaxHitPoints()-1);
+		scanner.close();
 		}
-	}	
+	}
+	
+	public static void main(String[] args){
+		PotionScene ps = new PotionScene();
+	}
 }

@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class scene01 {
 	char[] buffer;
-	Hero hero;
-	Monster monster;
+	//TODO need external hero
+	public static Hero hero = new Hero("Lydia", 5, 5, 0);
 	
 	public scene01(int monsterHit, int monsterStr){
 		System.out.println("What is that fluttering sound?");
@@ -16,6 +16,7 @@ public class scene01 {
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		monster.Summary();
 		sortie srt = new sortie(hero, monster);
+
 		if(monster.getHitPoints()<=0 && hero.getHitPoints()>0){
 			part2();
 		}
@@ -47,6 +48,10 @@ public class scene01 {
 		    	System.out.println();
 		    	hero.setGold(hero.getGold()+toss);
 		    }
-		  }
+		 }
+	}
+	
+	public static void main(String args[]){
+		scene01 sc = new scene01(10, 5);
 	}
 }

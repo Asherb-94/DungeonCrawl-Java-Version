@@ -15,23 +15,27 @@ public class sortie
 	////////
     public sortie(Hero hero, Monster monster)
     {
-        int monsterThrow = random.nextInt(monster.getStrength());
+        int monsterThrow = 0; 
         int heroThrow;
-        int bothAlive = 1;
-        int runAway = 0;
+        boolean bothAlive = true;
+        boolean stay = true;
         
-        while (bothAlive == 1 && runAway != 0) //maybe problematic
+        while (bothAlive && stay) //maybe problematic
         {
             System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck) ");
-            Scanner scan = new Scanner(System. in );
-            scan.nextLine();
+            Scanner scan = new Scanner(System.in);
+            String ans = scan.nextLine();
+            
             //Hero Fights the Monster
-            if (buffer[0] == 'f' || buffer[0] == 'F')
+            if (ans.equals("f") || ans.equals("F"))
             {
                 System.out.print("\n\n\tYou attack the " + monster.getName()+"\n\n");
                 
-               
                 heroThrow = random.nextInt(hero.getStrength());
+                monsterThrow = random.nextInt(monster.getStrength());
+                
+                System.out.println("Hero Throw: " + heroThrow);
+                System.out.println("Monster Throw: " + monsterThrow);
                 
                 if (heroThrow == monsterThrow)
                 {
@@ -50,7 +54,7 @@ public class sortie
                     System.out.print("\tThe " + monster.getName() + " looses a hit point.\n\n");
                     monster.setHitPoints(monster.getHitPoints()-1);
                 }
-                else if (heroThrow < monsterThrow - 2)
+                else if (heroThrow < monsterThrow-2)
                 {
                     System.out.print("\tOUCH OUCH OUCH!! The " + monster.getName() + " hits you.\n");
                     System.out.print("\tYou loose two hit point.\n\n");
@@ -70,13 +74,17 @@ public class sortie
                 System.out.print("\tThe " + monster.getName() + "throws a shurikin at your back!!\n");
                 monsterThrow = (int)(Math.random() * 4) + 1;
             }
+            
+            
             if (monsterThrow > 3)
             {
                 System.out.print("\tIt hits! You lose a hit point\n");
                 hero.setHitPoints(hero.getHitPoints()-1);
             }
             else System.out.print("\tIt misses.\n");
-            runAway = 1;
+            
+            hero.Summary();
+            monster.Summary();
         }
         //Hero ducks the Monster's blow
         //else
@@ -100,31 +108,36 @@ public class sortie
                 System.out.print("\tYou loose a hit point!\n\n");
                 hero.setHitPoints(hero.getHitPoints()-1);
             }
+            
+            hero.Summary();
+            monster.Summary();
         }
         //Determine the outcome of this exchange of blows
         if (hero.getHitPoints() <= 0)
         {
             System.out.print("\n\t\t\tYou moan... and die...\n\n");
-            bothAlive = 0;
+            bothAlive = false;
         }
         else if (monster.getHitPoints() <= 0)
         {
             System.out.print("\tThe " + monster.getName() + " drops dead.\n\n");
-            bothAlive = 0;
+            bothAlive = false;
         }
         
         hero.Summary();
         monster.Summary();
         
         //The monster hears its mommy calling
+        // It is not dead, but is weaker than the hero
         if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1)
         {
-            runAway = 1;
+            stay = false;;
             System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
         }
+        
         //end while
         //Final Result of the Sortie
-        if (runAway != 0 && hero.getHitPoints() > 0) 
+        if (!stay && hero.getHitPoints() > 0) 
         {
             System.out.print("\n\n\tYou gain strength from your experience\n");
             hero.setStrength(hero.getStrength()+1);
@@ -132,5 +145,7 @@ public class sortie
             hero.Summary();
             System.out.print("\n");
         }
+        
+        
     }    
 }
