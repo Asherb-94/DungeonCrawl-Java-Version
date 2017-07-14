@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Scene04 {
 	Hero hero;
+	// TODO
 	int monsterHit;
 	int monsterStr;
 	
