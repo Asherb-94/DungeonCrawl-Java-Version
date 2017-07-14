@@ -1,7 +1,8 @@
 package Dungeon;
+import java.io.IOException;
 import java.util.Scanner;
 
-public  class DungeonCrawl {
+public abstract class DungeonCrawl extends Scenes{
     static Hero hero; //The hero object    -- constantly updated by the game
 	Monster monster; //The monster object -- constantly updated by the game
 	private int hitPoints;
@@ -57,7 +58,7 @@ public  class DungeonCrawl {
 	
 	
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException, InterruptedException 
 	{
 		Scanner scan = new Scanner(System.in);
 		int scene = 0; //current scene number
@@ -68,14 +69,14 @@ public  class DungeonCrawl {
 		System.out.println("\n\n      (Hit Enter");
 		if (scan.hasNextLine())
 		{
-			//Clear the screen on the cmd prompt
+			//Clear the screen on the command prompt
 	        final String os = System.getProperty("os.name");
 	        if (os.contains("Windows"))
 	            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	        else
 	            Runtime.getRuntime().exec("clear");
 		}
-		makeActor("N",4,4,0);
+		Hero hero = new Hero("dummy",4,4,0);
 		Intro obj = new Intro();
 		obj.intro();
 		
@@ -122,10 +123,6 @@ public  class DungeonCrawl {
 			    printf("\n\n\n            (Hit enter)"); 
 			    gets( buffer );*/
 			  }
-			  
-			  
-			
-			
 			
 		}
 
