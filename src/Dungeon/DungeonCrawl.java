@@ -91,6 +91,11 @@ public abstract class DungeonCrawl extends Scenes {
 		        else
 		            Runtime.getRuntime().exec("clear");
 			}
+			System.out.print("\n\n\n        **** " + scene + " ****\n\n");
+			hero.Summary();
+			
+			//go to the current scene
+			
 			
 			
 		}
