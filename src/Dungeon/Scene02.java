@@ -3,7 +3,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Scene02 {
-	// TODO //
 	Hero hero;
 	
 	public Scene02(int monsterHit, int monsterStr){
@@ -68,6 +67,7 @@ public class Scene02 {
 					System.out.println("\nNothing happens.\n\n");
 				}
 			}
+		scanner.close();
 		}
 	}
 }
