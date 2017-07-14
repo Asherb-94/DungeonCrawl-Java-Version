@@ -7,14 +7,18 @@ import java.util.Scanner;
 public class scene01 {
 	char[] buffer;
 	Hero hero;
-	Monster monster;
+	
+	//TODO 
+	int monsterHit;
+	int monsterStr;
 	
 	public void part1(){
 		System.out.println("What is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
-		makeActor(monster, "Bat", monsterHit, monsterStr, 0);
+		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		monster.Summary();
-		sortie();
+		//TODO
+		//sortie();
 		if(monster.getHitPoints()<=0 && hero.getHitPoints()>0){
 			part2();
 		}
