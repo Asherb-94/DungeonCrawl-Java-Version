@@ -13,7 +13,7 @@ public class sortie
     Hero hero;
     Hero monster;
     Random random = new Random();
-    //////
+    ///////
     public void sortie()
     {
         int monsterThrow = random.nextInt(monster.getStrength());
