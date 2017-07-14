@@ -1,7 +1,7 @@
 package Dungeon;
 import java.util.Scanner;
 
-public abstract class DungeonCrawl extends Scenes {
+public  class DungeonCrawl {
     static Hero hero; //The hero object    -- constantly updated by the game
 	Monster monster; //The monster object -- constantly updated by the game
 	private int hitPoints;
@@ -37,7 +37,7 @@ public abstract class DungeonCrawl extends Scenes {
 	}
 	
 	
-	void sceneSelect( int scene )
+	static void sceneSelect( int scene )
 	{
 	  if      ( scene== 0 ) scene00(  0, 0 );  /* monster-hitpoints, monster-strength  */
 	  else if ( scene== 1 ) scene01(  2, 2 );
@@ -95,6 +95,34 @@ public abstract class DungeonCrawl extends Scenes {
 			hero.Summary();
 			
 			//go to the current scene
+			sceneSelect(  scene ); 
+			
+			 /* If hit points are low, place a magic potion in the Hero's path */
+			  if (  hero.getHitPoints() > 0 && hero.getHitPoints() < scene/4 + 2  ) 
+			  {
+				  PotionScene objPotion = new PotionScene();
+				  objPotion.potionScene();
+			  }
+			  
+			  /* End of Game Summary */
+			  if ( hero.getHitPoints() <= 0 )
+			  {
+			    System.out.print("\n\nYou Lose.\n");
+			    rip( hero.getName() );
+			  }
+			  else
+			  {
+			    printf("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");
+			    printf("  You now have %2d pieces of gold and have WON the game.\n\n", hero.gold+=100 );
+			    printf("            (Hit enter)"); 
+			    gets( buffer ); 
+			    system("cls");
+			    winner( hero.gold );
+			    printf("\n\n\n            (Hit enter)"); 
+			    gets( buffer );
+			  }
+			  
+			  
 			
 			
 			

@@ -9,7 +9,7 @@ public class PotionScene {
 	static int[] potions = {0, 1, 2, 3};
 	int potionInit = 0;
 	
-	private void potionScene(){
+	void potionScene(){
 		int toss;
 		int tossA;
 		int tossB;
