@@ -63,7 +63,7 @@ public abstract class DungeonCrawl extends Scenes {
 		int scene = 0; //current scene number
 		
 		//Splash Screen aka Title screen
-		Splash objSplash = new Splash();
+		Splash objSplash = new Splash();//making splash next 
 	    
 		System.out.println("\n\n      (Hit Enter");
 		if (scan.hasNextLine())
