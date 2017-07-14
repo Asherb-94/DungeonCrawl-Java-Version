@@ -1,17 +1,19 @@
+package Dungeon;
 import java.util.Scanner;
 
 public class Scene04 {
 	Hero hero;
-	// TODO
 	int monsterHit;
 	int monsterStr;
-	
 	Scanner scanner = new Scanner(System.in);
 	
 	// start //
-	private void scene04(int monsterHit, int monsterStr){
+	private Scene04(int monsterHit, int monsterStr){
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
+		
+		this.monsterHit = monsterHit;
+		this.monsterStr = monsterStr;
 		
 		String ans = scanner.nextLine();
 		if (ans.equals("L") || ans.equals("l"))
@@ -34,7 +36,7 @@ public class Scene04 {
 		else {
 			System.out.println("\nOh no! You have angered the Great Pumpkin!!\n");
 			Monster monster = new Monster("Great Pumpkin", monsterHit, monsterStr, 0);
-			//TODO sortie
+			sortie sortie = new sortie(hero, monster);
 		}
 	}
 	

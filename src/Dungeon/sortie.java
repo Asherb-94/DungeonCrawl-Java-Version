@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class sortie
 {
     char buffer[] = new char[132];
-    actor hero;
-    actor monster;
-    //////
-    public void sortie()
+    Random random = new Random();
+
+	////////
+    public sortie(Hero hero, Monster monster)
     {
-        int monsterThrow,
-        heroThrow;
+        int monsterThrow = random.nextInt(monster.getStrength());
+        int heroThrow;
         int bothAlive = 1;
         int runAway = 0;
         
@@ -28,51 +28,52 @@ public class sortie
             //Hero Fights the Monster
             if (buffer[0] == 'f' || buffer[0] == 'F')
             {
-                System.out.print("\n\n\tYou attack the " + monster.name+"\n\n");
-                monsterThrow = randInt(1, monster.strength);
-                heroThrow = randInt(1, hero.strength);
+                System.out.print("\n\n\tYou attack the " + monster.getName()+"\n\n");
+                
+               
+                heroThrow = random.nextInt(hero.getStrength());
                 
                 if (heroThrow == monsterThrow)
                 {
                     System.out.print("\tYou swing and miss.\n");
-                    print("\tThe " + monster.name + " swings and misses.\n\n");
+                    System.out.println("\tThe " + monster.getName() + " swings and misses.\n\n");
                 }
                 else if (heroThrow > monsterThrow + 2)
                 {
                     System.out.print("\tWHAMO!! You hit the monster hard.\n");
-                    System.out.print("\tThe " + monster.name + " looses two hit points.\n\n");
-                    monster.hitPoints -= 2;
+                    System.out.print("\tThe " + monster.getName() + " looses two hit points.\n\n");
+                    monster.setHitPoints(monster.getHitPoints()-2);
                 }
                 else if (heroThrow > monsterThrow)
                 {
                     System.out.print("\tBAM!! You swing and hit.\n");
-                    System.out.print("\tThe " + monster.name + " looses a hit point.\n\n");
-                    monster.hitPoints--;
+                    System.out.print("\tThe " + monster.getName() + " looses a hit point.\n\n");
+                    monster.setHitPoints(monster.getHitPoints()-1);
                 }
                 else if (heroThrow < monsterThrow - 2)
                 {
-                    System.out.print("\tOUCH OUCH OUCH!! The " + monster.name + " hits you.\n");
+                    System.out.print("\tOUCH OUCH OUCH!! The " + monster.getName() + " hits you.\n");
                     System.out.print("\tYou loose two hit point.\n\n");
-                    hero.hitPoints -= 2;
+                    hero.setHitPoints(hero.getHitPoints()-1);
                 }
                 else
                 {
-                    System.out.print("\tOOF!! The " + monster.name + " hits you.\n");
+                    System.out.print("\tOOF!! The " + monster.getName() + " hits you.\n");
                     System.out.print("\tYou loose a hit point.\n\n");
-                    hero.hitPoints--;
+                    hero.setHitPoints(hero.getHitPoints()-1);
                 }
             }
             //Hero Runs Away
             else if (buffer[0] == 'r' || buffer[0] == 'R')
             {
-                System.out.print("\n\tYou run away from the " + monster.name);
-                System.out.print("\tThe " + monster.name + "throws a shurikin at your back!!\n");
+                System.out.print("\n\tYou run away from the " + monster.getName());
+                System.out.print("\tThe " + monster.getName() + "throws a shurikin at your back!!\n");
                 monsterThrow = (int)(Math.random() * 4) + 1;
             }
             if (monsterThrow > 3)
             {
                 System.out.print("\tIt hits! You lose a hit point\n");
-                hero.hitPoints--;
+                hero.setHitPoints(hero.getHitPoints()-1);
             }
             else System.out.print("\tIt misses.\n");
             runAway = 1;
@@ -81,51 +82,54 @@ public class sortie
         //else
         {
             System.out.print("\n\n\tYou duck from the monster's blow.\n");
-            monsterThrow = randInt(1, monster.strength);
-            heroThrow = randInt(1, hero.strength);
-            if (hero.hitPoints < hero.maxHitPoints && heroThrow > 3 * monsterThrow / 4)
+            monsterThrow = random.nextInt(monster.getStrength());
+            heroThrow = random.nextInt(hero.getStrength());
+            if (hero.getHitPoints() < hero.getMaxHitPoints() && heroThrow > 3 * monsterThrow / 4)
             {
-                System.out.print("\tThe " + monster.name + " misses.\n\n");
+                System.out.print("\tThe " + monster.getName() + " misses.\n\n");
                 System.out.print("\tYour tricky move gains you a hit point!!!\n");
-                hero.hitPoints++;
+                hero.setHitPoints(hero.getHitPoints()+1);
             }
             else if (heroThrow > monsterThrow / 2)
             {
-                System.out.print("\tThe " + monster.name + " misses.\n\n");
+                System.out.print("\tThe " + monster.getName() + " misses.\n\n");
             }
             else
             {
-                System.out.print("\tThe " + monster.name + " hits you anyway.\n");
+                System.out.print("\tThe " + monster.getName() + " hits you anyway.\n");
                 System.out.print("\tYou loose a hit point!\n\n");
-                hero.hitPoints--;
+                hero.setHitPoints(hero.getHitPoints()-1);
             }
         }
         //Determine the outcome of this exchange of blows
-        if (hero.hitPoints <= 0)
+        if (hero.getHitPoints() <= 0)
         {
             System.out.print("\n\t\t\tYou moan... and die...\n\n");
             bothAlive = 0;
         }
-        else if (monster.hitPoints <= 0)
+        else if (monster.getHitPoints() <= 0)
         {
-            System.out.print("\tThe " + monster.name + " drops dead.\n\n");
+            System.out.print("\tThe " + monster.getName() + " drops dead.\n\n");
             bothAlive = 0;
         }
-        summary();
+        
+        hero.Summary();
+        monster.Summary();
+        
         //The monster hears its mommy calling
-        if (monster.hitPoints > 0 && monster.hitPoints < hero.hitPoints && (int)(Math.random() * 10) + 1 == 1)
+        if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1)
         {
             runAway = 1;
-            System.out.print("\n\t\tThe " + monster.name + " turns tail and runs away!\n\n");
+            System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
         }
         //end while
         //Final Result of the Sortie
-        if (runAway != 0 && hero.hitPoints > 0) 
+        if (runAway != 0 && hero.getHitPoints() > 0) 
         {
             System.out.print("\n\n\tYou gain strength from your experience\n");
-            hero.strength++;
-            hero.maxStrength++;
-            heroSummary();
+            hero.setStrength(hero.getStrength()+1);
+            hero.setMaxStrength(hero.getMaxStrength()+1);
+            hero.Summary();
             System.out.print("\n");
         }
     }    

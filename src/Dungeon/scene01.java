@@ -10,12 +10,12 @@ public class scene01 {
 	Hero hero;
 	Monster monster;
 	
-	public void part1(){
+	public scene01(int monsterHit, int monsterStr){
 		System.out.println("What is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
-		makeActor(monster, "Bat", monsterHit, monsterStr, 0);
+		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		monster.Summary();
-		sortie();
+		sortie srt = new sortie(hero, monster);
 		if(monster.getHitPoints()<=0 && hero.getHitPoints()>0){
 			part2();
 		}
