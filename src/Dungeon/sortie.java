@@ -10,11 +10,10 @@ import java.util.Scanner;
 public class sortie
 {
     char buffer[] = new char[132];
-    Hero hero;
-    Hero monster;
     Random random = new Random();
-    ////////
-    public void sortie()
+
+	////////
+    public sortie(Hero hero, Monster monster)
     {
         int monsterThrow = random.nextInt(monster.getStrength());
         int heroThrow;
