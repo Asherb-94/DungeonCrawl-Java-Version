@@ -1,5 +1,5 @@
 package Dungeon;
-//
+////
 class Actor 
 {
 	public int hitPoints(int x)
