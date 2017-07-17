@@ -34,8 +34,8 @@ public class sortie
                 heroThrow = random.nextInt(hero.getStrength());
                 monsterThrow = random.nextInt(monster.getStrength());
                 
-                System.out.println("Hero Throw: " + heroThrow);
-                System.out.println("Monster Throw: " + monsterThrow);
+/*                System.out.println("Hero Throw: " + heroThrow);
+                System.out.println("Monster Throw: " + monsterThrow);*/
                 
                 if (heroThrow == monsterThrow)
                 {
@@ -76,7 +76,7 @@ public class sortie
                 System.out.println("\n\tYou run away from the " + monster.getName());
                 System.out.println("\tThe " + monster.getName() + " throws a shurikin at your back!!\n");
                 monsterThrow = (int)(Math.random() * 4) + 1;
-                System.out.println("Monster Throw" + monsterThrow);
+//                System.out.println("Monster Throw" + monsterThrow);
 
                 if (monsterThrow > 3)
                 {
@@ -95,8 +95,8 @@ public class sortie
                 monsterThrow = random.nextInt(monster.getStrength());
                 heroThrow = random.nextInt(hero.getStrength());
                 
-                System.out.println("Hero Throw: " + heroThrow);
-                System.out.println("Monster Throw: " + monsterThrow);
+/*                System.out.println("Hero Throw: " + heroThrow);
+                System.out.println("Monster Throw: " + monsterThrow);*/
                 
                 // hero's HP is not full and hero's throw > 3/4 of monster's throw
                 if (hero.getHitPoints() < hero.getMaxHitPoints() && heroThrow > 3 * monsterThrow / 4)

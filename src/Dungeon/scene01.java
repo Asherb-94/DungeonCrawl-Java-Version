@@ -1,6 +1,5 @@
 package Dungeon;
 
-
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
@@ -10,7 +9,7 @@ public class scene01 {
 	//TODO need external hero
 	public static Hero hero = new Hero("Lydia", 5, 5, 0);
 	
-	public scene01(int monsterHit, int monsterStr){
+	public scene01(int monsterHit, int monsterStr) throws IOException{
 		System.out.println("What is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
@@ -22,16 +21,13 @@ public class scene01 {
 		}
 	}
 	
-	public void part2(){
+	public void part2() throws IOException{
 		System.out.println("The dead bat lies at your feet.");
 		System.out.println("Is that some gold in its teeth?");
 		System.out.println("Do you wish to pry the gold from the bat's teeth? (y or n): ");
 		char answer = 'n';
-		try {
 			answer = (char) System.in.read();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 		if ( answer == 'y' || answer == 'Y' ){
 			Random ran = new Random();
 			int toss = ran.nextInt(11)+1;
@@ -51,7 +47,7 @@ public class scene01 {
 		 }
 	}
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws IOException{
 		scene01 sc = new scene01(3, 5);
 	}
 }

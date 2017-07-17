@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class PotionScene {
 	//TODO need external hero
-	//public static Hero hero = new Hero("Lydia", 5, 5, 0);
-	Hero hero;
+	static Hero hero = new Hero("Lydia", 5, 5, 0);
 	
 	// The following types of potions correspond to each //
 	static int[] potions = {0, 1, 2, 3};
-	int potionInit = 0;
+	static int potionInit = 0;
 	
-	void potionScene(){
+	public static void potionScene(){
 		int toss;
 		int tossA;
 		int tossB;
@@ -77,6 +76,6 @@ public class PotionScene {
 	}
 	
 	public static void main(String[] args){
-		PotionScene ps = new PotionScene();
+		potionScene();
 	}
 }
