@@ -27,8 +27,8 @@ public class Hero {
 		return hitPoints;
 	}
 
-	public void setHitPoints(int hitPoints) {
-		this.hitPoints = hitPoints;
+	public static void setHitPoints(int hitPoints) {
+		hitPoints = hitPoints;
 	}
 
 	public static int getMaxHitPoints() {
@@ -43,16 +43,16 @@ public class Hero {
 		return strength;
 	}
 
-	public void setStrength(int strength) {
-		this.strength = strength;
+	public static void setStrength(int strength) {
+		strength = strength;
 	}
 
 	public static int getMaxStrength() {
 		return maxStrength;
 	}
 
-	public void setMaxStrength(int maxStrength) {
-		this.maxStrength = maxStrength;
+	public static void setMaxStrength(int maxStrength) {
+		maxStrength = maxStrength;
 	}
 
 	public static int getPotions() {
@@ -71,8 +71,8 @@ public class Hero {
 		this.gold = gold;
 	}
 	  
-	public String getName(){
-		return this.name;
+	public static String getName(){
+		return name;
 	}
 	  
 }

@@ -5,9 +5,9 @@ public class Monster {
 	  private static int maxHitPoints;
 	  private static int strength;
 	  private static int maxStrength;
-	  private int potions;
+	  private static int potions;
 	  private static int gold;
-	  private String name;
+	  private static String name;
 	  
 	  public Monster(String name, int hitPoints, int strength, int gold){
 		  this.name = name;
@@ -56,7 +56,7 @@ public class Monster {
 		this.maxStrength = maxStrength;
 	}
 
-	public int getPotions() {
+	public static int getPotions() {
 		return potions;
 	}
 
@@ -72,7 +72,7 @@ public class Monster {
 		this.gold = gold;
 	}
 	
-	public String getName(){
-		return this.name;
+	public static String getName(){
+		return name;
 	}
 }

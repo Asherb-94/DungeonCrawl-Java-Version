@@ -102,7 +102,7 @@ public class DungeonCrawl extends Scenes{
 			
 			//go to the current scene
 			sceneSelect(  scene ); 
-			scene++;
+			System.out.println("    ****" + "Scene: "+ (scene++) + " ****    ");
 			
 			//Play hits enter to continue
 			if (scanSub.hasNextLine())

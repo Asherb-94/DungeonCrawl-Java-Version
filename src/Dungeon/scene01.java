@@ -15,7 +15,8 @@ public class scene01 {
 		System.out.println("OH NO! It's a saber-tooth bat!");
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		monster.Summary();
-		sortie srt = new sortie(hero, monster);
+		sortie srt = new sortie(hero, monster);//call to sortie 
+		
 		if(monster.getHitPoints()<=0 && hero.getHitPoints()>0){
 			part2();
 		}
