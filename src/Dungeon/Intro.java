@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Intro {
 
 	public static final char[] buffer = new char[132];
-	public Hero hero;
+	public Hero objHero;
 	
 	public void intro() throws IOException
 	{
@@ -29,31 +29,31 @@ public class Intro {
 	    	System.out.println("  You turn tail and run.  ");
 	    	System.out.println("  From the trees around you, wood nymphs giggle derisively. \n\n");
 	    	System.out.println("  In your panic, you step on a bear trap and die.\n");
-	    	hero.setHitPoints(0);
+	    	objHero.setHitPoints(0);
 	    	//hero name now becomes coward TODO 
 	    }
 	    else
 	    {
+	    	String nameCount = "abcd";
+	    	Scanner objName = new Scanner(System.in);
 	    	int flag = 1;
 	    	System.out.println("  Spoken like a true Hero!.  ");
 	    	while (flag == 1)// loop for name length
 	    	{
-	    		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		    	System.out.println("  Enter your name, Hero: ");
-		        for(int i = 0; i<buffer.length; i++) 
-		        {
-		            buffer[i] = (char) br.read();//puts char into each index
-		            
-		        }
-		        if ( buffer[4] == '\0')// == null 
-		        {
-		        	System.out.println("  You call *that* a name for a Hero? Try again: ");
-		        	br.close();
-		        }
-		        else
-		        {
-		        	System.out.println("\n Now *thats* a Heroic name\n");
-		        }	    		
+		    	Hero objHero = new Hero(objName.next(),4,4,0);//not using buffer for global name? 
+		    	
+		    	if (objHero.getName().isEmpty())
+		    	{
+		    		System.out.println("  You call *that* a name for a Hero? Try again: ");
+		    	}
+		    	else
+		    	{
+		    		
+		    		System.out.println("\n Now *thats* a Heroic name\n");
+		    		flag = 0;//this will stop the loop 
+		    	}    		
 	    	}	        
 	    }		
 	}

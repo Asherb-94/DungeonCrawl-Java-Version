@@ -1,12 +1,12 @@
 package Dungeon;
 public class Hero {
-	  private int hitPoints;
-	  private int maxHitPoints;
-	  private int strength;
-	  private int maxStrength;
-	  private int potions;
-	  private int gold;
-	  private String name;
+	  public static int hitPoints;
+	  private static int maxHitPoints;
+	  private static int strength;
+	  private static int maxStrength;
+	  private static int potions;
+	  private static int gold;
+	  private static String name;
 	  
 	  public Hero(String name, int hitPoints, int strength, int gold){
 		  this.name = name;
@@ -17,13 +17,13 @@ public class Hero {
 		  this.gold = gold;
 	  }
 	  
-	  public void Summary(){
-		  System.out.println("Hero " + this.name +": " + this.hitPoints + "/" 
-				  + this.maxHitPoints + "HP; " + this.strength + "/" + this.maxStrength 
-				  + " ST; " + this.gold + "Gold");
+	  public static void Summary(){
+		  System.out.println("Hero " + name +": " + hitPoints + "/" 
+				  + maxHitPoints + "HP; " + strength + "/" + maxStrength 
+				  + " ST; " + gold + "Gold");
 	  }
 
-	public int getHitPoints() {
+	public static int getHitPoints() {
 		return hitPoints;
 	}
 
@@ -31,7 +31,7 @@ public class Hero {
 		this.hitPoints = hitPoints;
 	}
 
-	public int getMaxHitPoints() {
+	public static int getMaxHitPoints() {
 		return maxHitPoints;
 	}
 
@@ -39,7 +39,7 @@ public class Hero {
 		this.maxHitPoints = maxHitPoints;
 	}
 
-	public int getStrength() {
+	public static int getStrength() {
 		return strength;
 	}
 
@@ -47,7 +47,7 @@ public class Hero {
 		this.strength = strength;
 	}
 
-	public int getMaxStrength() {
+	public static int getMaxStrength() {
 		return maxStrength;
 	}
 
@@ -55,7 +55,7 @@ public class Hero {
 		this.maxStrength = maxStrength;
 	}
 
-	public int getPotions() {
+	public static int getPotions() {
 		return potions;
 	}
 
@@ -63,7 +63,7 @@ public class Hero {
 		this.potions = potions;
 	}
 
-	public int getGold() {
+	public static int getGold() {
 		return gold;
 	}
 

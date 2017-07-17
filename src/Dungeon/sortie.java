@@ -9,7 +9,7 @@ import java.util.Scanner;
 //|  the hero runs away.
 public class sortie
 {
-    char buffer[] = new char[132];
+    char[] buffer = new char[132];
     Random random = new Random();
 
 	////////
@@ -20,11 +20,15 @@ public class sortie
         int bothAlive = 1;
         int runAway = 0;
         
+        System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck) ");
+        Scanner scan = new Scanner(System. in );
+        //char input = scan.nextLine();
+        char answer = scan.next(".").charAt(0);
+	    buffer[0] = answer;
+        
         while (bothAlive == 1 && runAway != 0) //maybe problematic
         {
-            System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck) ");
-            Scanner scan = new Scanner(System. in );
-            scan.nextLine();
+            
             //Hero Fights the Monster
             if (buffer[0] == 'f' || buffer[0] == 'F')
             {

@@ -1,12 +1,12 @@
 package Dungeon;
 
 public class Monster {
-	private int hitPoints;
-	  private int maxHitPoints;
-	  private int strength;
-	  private int maxStrength;
+	private static int hitPoints;
+	  private static int maxHitPoints;
+	  private static int strength;
+	  private static int maxStrength;
 	  private int potions;
-	  private int gold;
+	  private static int gold;
 	  private String name;
 	  
 	  public Monster(String name, int hitPoints, int strength, int gold){
@@ -24,7 +24,7 @@ public class Monster {
 				  + " ST; " + this.gold + "Gold");
 	  }
 
-	public int getHitPoints() {
+	public static int getHitPoints() {
 		return hitPoints;
 	}
 
@@ -32,7 +32,7 @@ public class Monster {
 		this.hitPoints = hitPoints;
 	}
 
-	public int getMaxHitPoints() {
+	public static int getMaxHitPoints() {
 		return maxHitPoints;
 	}
 
@@ -40,7 +40,7 @@ public class Monster {
 		this.maxHitPoints = maxHitPoints;
 	}
 
-	public int getStrength() {
+	public static int getStrength() {
 		return strength;
 	}
 
@@ -48,7 +48,7 @@ public class Monster {
 		this.strength = strength;
 	}
 
-	public int getMaxStrength() {
+	public static int getMaxStrength() {
 		return maxStrength;
 	}
 
@@ -64,7 +64,7 @@ public class Monster {
 		this.potions = potions;
 	}
 
-	public int getGold() {
+	public static int getGold() {
 		return gold;
 	}
 

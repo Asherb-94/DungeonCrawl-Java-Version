@@ -2,9 +2,10 @@ package Dungeon;
 import java.io.IOException;
 import java.util.Scanner;
 
-public abstract class DungeonCrawl extends Scenes{
+public class DungeonCrawl extends Scenes{
     static Hero hero; //The hero object    -- constantly updated by the game
 	Monster monster; //The monster object -- constantly updated by the game
+	
 	private int hitPoints;
 	private int strength;
 	private String name;
@@ -60,13 +61,14 @@ public abstract class DungeonCrawl extends Scenes{
 
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
+		
 		Scanner scan = new Scanner(System.in);
 		int scene = 0; //current scene number
 		
 		//Splash Screen aka Title screen
 		Splash objSplash = new Splash();//making splash next 
 	    
-		System.out.println("\n\n      (Hit Enter");
+		System.out.println("\n\n      (Hit Enter)");
 		if (scan.hasNextLine())
 		{
 			//Clear the screen on the command prompt
@@ -76,14 +78,17 @@ public abstract class DungeonCrawl extends Scenes{
 	        else
 	            Runtime.getRuntime().exec("clear");
 		}
-		Hero hero = new Hero("dummy",4,4,0);
+		//Hero hero = new Hero("dummy",4,4,0);
 		Intro obj = new Intro();
 		obj.intro();
+		//System.out.println(hero.getHitPoints());
+		//System.out.println(hero.Summary());
 		
 		while (hero.getHitPoints() > 0 && scene <= 6)//MAXSCENE is a class, Actor is too for hero
 		{
-			System.out.println("\n\n (Hit enter)");
-			if (scan.hasNextLine())
+			Scanner scanSub = new Scanner(System.in);
+			System.out.println("\n\n      (Hit Enter)");
+			if (scanSub.hasNextLine())
 			{
 				//Clear the screen on the command prompt
 		        final String os = System.getProperty("os.name");
@@ -92,11 +97,25 @@ public abstract class DungeonCrawl extends Scenes{
 		        else
 		            Runtime.getRuntime().exec("clear");
 			}
-			System.out.print("\n\n\n        **** " + scene + " ****\n\n");
+			System.out.println();
 			hero.Summary();
 			
 			//go to the current scene
 			sceneSelect(  scene ); 
+			scene++;
+			
+			//Play hits enter to continue
+			if (scanSub.hasNextLine())
+			{
+				//Clear the screen on the command prompt
+		        final String os = System.getProperty("os.name");
+		        if (os.contains("Windows"))
+		            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+		        else
+		            Runtime.getRuntime().exec("clear");
+			}
+			hero.Summary();
+			
 			
 			 /* If hit points are low, place a magic potion in the Hero's path */
 			  if (  hero.getHitPoints() > 0 && hero.getHitPoints() < scene/4 + 2  ) 
@@ -112,17 +131,20 @@ public abstract class DungeonCrawl extends Scenes{
 			    RIP objRIP = new RIP();
 			    objRIP.display();
 			  }
-			  else
+			  if(scene == 6)
 			  {
+				int finalGold = 0;
 			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");
-			    System.out.print("  You now have %2d pieces of gold and have WON the game.\n\n" + hero.getGold()+100 );
-			    System.out.print("            (Hit enter)"); 
+			    finalGold = hero.getGold() + 100;
+			    System.out.print("  You now have " + finalGold + " pieces of gold and have WON the game.\n\n");
+			    //System.out.println("            (Hit enter)"); 
 /*			    gets( buffer ); 
 			    system("cls");
 			    winner( hero.gold );
 			    printf("\n\n\n            (Hit enter)"); 
 			    gets( buffer );*/
 			  }
+			  
 			
 		}
 
