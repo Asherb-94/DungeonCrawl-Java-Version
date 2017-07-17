@@ -78,10 +78,12 @@ public class sortie
                 	
                     System.out.print("\n\tYou run away from the " + monster.getName());
                     System.out.print("\tThe " + monster.getName() + "throws a shurikin at your back!!\n");
-                    monsterThrow = (int)(Math.random() * 4) + 1;
+                    //monsterThrow = (int)(Math.random() * 4) + 1;
+                    monsterThrow = 4;
                     if (monsterThrow > 3 )
                     {
                         System.out.print("\tIt hits! You lose a hit point\n");
+                        //hero.setHitPoints(hero.getHitPoints()-1);
                         hero.setHitPoints(hero.getHitPoints()-1);
                        
                     }
