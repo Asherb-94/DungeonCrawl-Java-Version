@@ -2,7 +2,8 @@ package Dungeon;
 import java.util.Scanner;
 
 public class Scene04 {
-	Hero hero;
+	//TODO global hero object
+	Hero hero = new Hero("Lydia", 5, 5, 0);
 	int monsterHit;
 	int monsterStr;
 	Scanner scanner = new Scanner(System.in);
@@ -28,6 +29,8 @@ public class Scene04 {
 		System.out.println("     Trick or Treat!!!\n\n");
 		System.out.println("Do you put a piece of gold in the bag? (y or n)");
 		
+		//TODO add conditional for if you don't have any gold
+		
 		String ans = scanner.nextLine();
 		if (ans.equals("Y") || ans.equals("y")){
 			hero.setGold(hero.getGold()+1);
@@ -43,5 +46,9 @@ public class Scene04 {
 	private void rightChoice(){
 		System.out.println("You find 10 gold pieces.");
 		hero.setGold(hero.getGold()+10);
+	}
+	
+	public static void main(String[] args){
+		Scene04 sc = new Scene04(5, 5);
 	}
 }

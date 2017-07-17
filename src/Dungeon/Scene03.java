@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 //
 public class Scene03 {
-	Hero hero;
+	//TODO global hero object
+	static Hero hero = new Hero("Hero", 5, 5, 0);
 
 	public Scene03(int monsterHit, int monsterStr){
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
@@ -21,7 +22,7 @@ public class Scene03 {
 		}
 	}
 	
-	private void scene03part2(){
+	private static void scene03part2(){
 		System.out.println("The dead mouse lies at your feet.");
 		System.out.println("You feel like kicking it into the darkness.");
 		System.out.println("Do you kick the dead mouse? (y or n)");
@@ -31,7 +32,7 @@ public class Scene03 {
 		
 		if (ans.equals("y") || ans.equals("Y")){
 			Random random = new Random();
-			int toss = random.nextInt(12);
+			int toss = random.nextInt(13);
 			
 			if (toss < 3){
 				System.out.println("Your actions show disrespect for the fallen.");
@@ -50,5 +51,8 @@ public class Scene03 {
 		scanner.close();
 	}
 	
-	
+	public static void main(String args[]){
+		//Scene03 sc = new Scene03(5, 5);
+		scene03part2();
+	}
 }

@@ -3,13 +3,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Scene02 {
-	Hero hero;
+	//TODO global Hero object
+	Hero hero = new Hero("Hero", 5, 5, 0);
 	
 	public Scene02(int monsterHit, int monsterStr){
 		System.out.println("\n\n\n\nYou go deeper into the mine.\n");
 		System.out.println("You find a small chest.");
-		System.out.println("On the chest is an inscription in a mystical language: ");
-		System.out.println("If (rand%6 == 0), death = 1; ");
+		System.out.println("On the chest is an inscription in a mystical language ");
 		System.out.println("\n\nDo you wish to open the box? (y or n)");
 		
 		Scanner scanner = new Scanner(System.in);
@@ -69,5 +69,9 @@ public class Scene02 {
 			}
 		scanner.close();
 		}
+	}
+	
+	public static void main(String args[]){
+		Scene02 sc = new Scene02(5, 5);
 	}
 }
