@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Scene04 {
 	//TODO global hero object
-	Hero hero = new Hero("Lydia", 5, 5, 0);
+	Hero hero;
 	int monsterHit;
 	int monsterStr;
 	Scanner scanner = new Scanner(System.in);

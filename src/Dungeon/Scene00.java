@@ -1,12 +1,10 @@
 package Dungeon;
 public class Scene00 {
-<<<<<<< HEAD
+
 	
 	public static Hero hero;
-=======
-	//TODO get external hero //
-	public static Hero hero = new Hero("Lydia", 5, 5, 0);
->>>>>>> branch 'master' of https://github.com/Asherb-94/DungeonCrawl-Java-Version.git
+
+
 
 	public Scene00()
 	{

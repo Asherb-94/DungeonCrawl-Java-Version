@@ -5,7 +5,7 @@ import java.util.Scanner;
 //
 public class Scene03 {
 	//TODO global hero object
-	static Hero hero = new Hero("Hero", 5, 5, 0);
+	static Hero hero;
 
 	public Scene03(int monsterHit, int monsterStr){
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");

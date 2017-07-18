@@ -1,7 +1,9 @@
 package Dungeon;
 
+import java.io.IOException;
+
 public abstract class Scenes {
-	public static final int MAXSCENE = 6;
+	//public static final int MAXSCENE = 6;
 	
 	
 	
@@ -10,7 +12,7 @@ public abstract class Scenes {
 		
 		
 	}
-	static void scene01( int monsterHit, int monsterStr ) {
+	static void scene01( int monsterHit, int monsterStr ) throws IOException {
 		scene01 objScene01 = new scene01(monsterHit,monsterStr);
 		
 		

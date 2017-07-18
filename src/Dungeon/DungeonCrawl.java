@@ -39,7 +39,7 @@ public class DungeonCrawl extends Scenes{
 	}
 	
 	
-	static void sceneSelect( int scene )
+	static void sceneSelect( int scene ) throws IOException
 	{
 	  if      ( scene== 0 ) scene00();  /* monster-hitpoints, monster-strength  */
 	  else if ( scene== 1 ) scene01(  2, 2 );
