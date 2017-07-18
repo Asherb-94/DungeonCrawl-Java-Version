@@ -11,7 +11,8 @@ public class sortie
 {
     char[] buffer = new char[132];//could be here for error? 
     Random random = new Random();
-    Hero hero;
+    DungeonCrawl obj = new DungeonCrawl();
+  
 
 	////////
     public sortie(Hero hero, Monster monster)
@@ -20,12 +21,14 @@ public class sortie
         int heroThrow;
         int bothAlive = 1;
         int runAway = 1;
+        int hit = 0;
     
         
         
         
         while (bothAlive == 1 && runAway == 1) //maybe problematic
         {
+        	 
         	System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck) ");
             Scanner scan = new Scanner(System. in );
             //char input = scan.nextLine();
@@ -82,9 +85,15 @@ public class sortie
                     monsterThrow = 4;
                     if (monsterThrow > 3 )
                     {
+                    	int x =0;
                         System.out.print("\tIt hits! You lose a hit point\n");
-                        //hero.setHitPoints(hero.getHitPoints()-1);
+                        
                         hero.setHitPoints(hero.getHitPoints()-1);
+                       
+                       
+                     
+                        
+                        
                        
                     }
                     else 

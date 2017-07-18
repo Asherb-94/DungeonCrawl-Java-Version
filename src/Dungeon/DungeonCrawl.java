@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DungeonCrawl extends Scenes{
     static Hero hero; //The hero object    -- constantly updated by the game
-	Monster monster; //The monster object -- constantly updated by the game
+    Monster monster; //The monster object -- constantly updated by the game
 	
 	private int hitPoints;
 	private int strength;
@@ -12,18 +12,19 @@ public class DungeonCrawl extends Scenes{
 	private int gold;
 	 
 	
-	public void makeActor(String name, int hitPoints, int strength, int gold)//has to do with actor,now hero class?; 
+/*	public void makeActor(String name, int hitPoints, int strength, int gold)//has to do with actor,now hero class?; 
 	{
 		this.name = name;
 		this.hitPoints = hitPoints;
 		this.strength = strength;
 		this.gold = gold;
-	}
+	}*/
 	
-	public void heroSummary()
+	public static void heroSummary()
 	{
-		System.out.println("    Hero   : " + hero.getHitPoints() + hero.getMaxHitPoints() + 
-													hero.getStrength() + hero.getMaxStrength() + hero.getGold());
+		System.out.println((Hero.getName() +": " + Hero.getHitPoints() + "/" 
+				  + Hero.getMaxHitPoints() + "HP; " + Hero.getStrength() + "/" + Hero.getMaxStrength() 
+				  + " ST; " + Hero.getGold() + " Gold"));
 	}
 	
 	public void monsterSummary()
@@ -66,7 +67,8 @@ public class DungeonCrawl extends Scenes{
 		int scene = 0; //current scene number
 		
 		//Splash Screen aka Title screen
-		Splash objSplash = new Splash();//making splash next 
+		Splash objSplash = new Splash();//create obj splash
+		objSplash.splash();//calls constructor and displays title 
 	    
 		System.out.println("\n\n      (Hit Enter)");
 		if (scan.hasNextLine())
@@ -78,13 +80,14 @@ public class DungeonCrawl extends Scenes{
 	        else
 	            Runtime.getRuntime().exec("clear");
 		}
-		//Hero hero = new Hero("dummy",4,4,0);
-		Intro obj = new Intro();
+	
+		Intro obj = new Intro();//where hero is created the frist time..name,health,strength,gold
 		obj.intro();
-		//System.out.println(hero.getHitPoints());
-		//System.out.println(hero.Summary());
+		heroSummary();
 		
-		while (hero.getHitPoints() > 0 && scene <= 6)//MAXSCENE is a class, Actor is too for hero
+		
+		
+		while (hero.getHitPoints() > 0 && scene <= 6)
 		{
 			Scanner scanSub = new Scanner(System.in);
 			System.out.println("\n\n      (Hit Enter)");
@@ -98,7 +101,8 @@ public class DungeonCrawl extends Scenes{
 		            Runtime.getRuntime().exec("clear");
 			}
 			System.out.println();
-			hero.Summary();
+			
+			
 			
 			//go to the current scene
 			sceneSelect(  scene ); 
@@ -114,7 +118,8 @@ public class DungeonCrawl extends Scenes{
 		        else
 		            Runtime.getRuntime().exec("clear");
 			}
-			hero.Summary();
+			//hero.Summary();
+
 			
 			
 			 /* If hit points are low, place a magic potion in the Hero's path */

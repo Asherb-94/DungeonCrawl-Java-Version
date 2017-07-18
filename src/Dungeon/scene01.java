@@ -5,16 +5,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class scene01 {
-	char[] buffer;
 	//TODO need external hero
-	public static Hero hero = new Hero("Lydia", 5, 5, 0);
+	static Hero hero;
+
 	
 	public scene01(int monsterHit, int monsterStr) throws IOException{
 		System.out.println("What is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		monster.Summary();
-
+		
 		sortie srt = new sortie(hero, monster);//call to sortie 
 		
 

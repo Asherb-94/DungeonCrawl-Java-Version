@@ -2,7 +2,7 @@ package Dungeon;
 
 public class Splash 
 {
-	void splash()
+	static void splash()
 	{//
 	  System.out.print("\n\n\n\n\n");
 	  System.out.print(" ==================================\n");

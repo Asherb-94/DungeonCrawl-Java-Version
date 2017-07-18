@@ -1,7 +1,7 @@
 package Dungeon;
 
 public class Monster {
-	private static int hitPoints;
+	  private static int hitPoints;
 	  private static int maxHitPoints;
 	  private static int strength;
 	  private static int maxStrength;
@@ -21,7 +21,7 @@ public class Monster {
 	  public void Summary(){
 		  System.out.println("Monster " + ": " + this.hitPoints + "/" 
 				  + this.maxHitPoints + "HP; " + this.strength + "/" + this.maxStrength 
-				  + " ST; " + this.gold + "Gold");
+				  + " ST; " + this.gold + " Gold");
 	  }
 
 	public static int getHitPoints() {

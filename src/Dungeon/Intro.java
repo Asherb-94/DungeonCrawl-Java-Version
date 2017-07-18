@@ -34,7 +34,6 @@ public class Intro {
 	    }
 	    else
 	    {
-	    	String nameCount = "abcd";
 	    	Scanner objName = new Scanner(System.in);
 	    	int flag = 1;
 	    	System.out.println("  Spoken like a true Hero!.  ");
