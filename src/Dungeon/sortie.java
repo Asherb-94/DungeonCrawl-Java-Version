@@ -86,7 +86,6 @@ public class sortie
                     {
                     	//int x =0;
                         System.out.print("\tIt hits! You lose a hit point\n");
-                        //TODO fix the error below
                         hero.setHitPoints(hero.getHitPoints()-1);
                       
                     }
