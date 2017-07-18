@@ -6,17 +6,18 @@ public class Scene04 {
 	Hero hero;
 	int monsterHit;
 	int monsterStr;
-	Scanner scanner = new Scanner(System.in);
+	Scanner scan = new Scanner(System.in);
 	
 	// start //
 	public Scene04(int monsterHit, int monsterStr){
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
+		System.out.println();
 		
 		this.monsterHit = monsterHit;
 		this.monsterStr = monsterStr;
 		
-		String ans = scanner.nextLine();
+		String ans = scan.nextLine();
 		if (ans.equals("L") || ans.equals("l"))
 			leftChoice();
 		
@@ -31,7 +32,7 @@ public class Scene04 {
 		
 		//TODO add conditional for if you don't have any gold
 		
-		String ans = scanner.nextLine();
+		String ans = scan.nextLine();
 		if (ans.equals("Y") || ans.equals("y")){
 			hero.setGold(hero.getGold()+1);
 			System.out.println("Wise choice. You continue down the tunnel.");

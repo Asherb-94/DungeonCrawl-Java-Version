@@ -27,10 +27,11 @@ public class scene01 {
 		System.out.println("The dead bat lies at your feet.");
 		System.out.println("Is that some gold in its teeth?");
 		System.out.println("Do you wish to pry the gold from the bat's teeth? (y or n): ");
-		char answer = 'n';
-			answer = (char) System.in.read();
+		Scanner scanner = new Scanner(System.in);
+		String answer = scanner.next();
 
-		if ( answer == 'y' || answer == 'Y' ){
+		if ( answer.equals("y") || answer.equals("Y") )
+		{
 			Random ran = new Random();
 			int toss = ran.nextInt(11)+1;
 

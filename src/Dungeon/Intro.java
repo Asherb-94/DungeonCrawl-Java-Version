@@ -18,7 +18,7 @@ public class Intro {
 		System.out.print("  rummored to be filled with lost treasure, \n");
 		System.out.print("  but guarded by ");
 		System.out.print("monsters dangerous and most foul.\n\n");
-		System.out.print("   None but the brave dare enterh.\n\n");
+		System.out.print("   None but the brave dare enter.\n\n");
 		
 		System.out.println(" Do you wish to continue? (y or n) ");
 	    answer = scan.next(".").charAt(0);

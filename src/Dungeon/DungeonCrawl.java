@@ -39,6 +39,12 @@ public class DungeonCrawl extends Scenes{
 	  monster.Summary();
 	}
 	
+	public static void pauseProg(){
+		System.out.println("\n\n    (Hit Enter)");
+		Scanner keyboard = new Scanner(System.in);
+		keyboard.hasNextLine();
+	}
+	
 	
 	static void sceneSelect( int scene ) throws IOException
 	{
@@ -54,6 +60,8 @@ public class DungeonCrawl extends Scenes{
 	  {
 	    System.out.print(" No such scene number ");
 	  }
+	  
+	 
 	}
 	
 	
@@ -84,42 +92,19 @@ public class DungeonCrawl extends Scenes{
 		Intro obj = new Intro();//where hero is created the frist time..name,health,strength,gold
 		obj.intro();
 		heroSummary();
-		
-		
+		//only runs once ^
+		//loops after that below (down arrow)
+		Scanner scanSub = new Scanner(System.in);
+		//scan.reset();
 		
 		while (hero.getHitPoints() > 0 && scene <= 6)
 		{
-			Scanner scanSub = new Scanner(System.in);
-			System.out.println("\n\n      (Hit Enter)");
-			if (scanSub.hasNextLine())
-			{
-				//Clear the screen on the command prompt
-		        final String os = System.getProperty("os.name");
-		        if (os.contains("Windows"))
-		            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-		        else
-		            Runtime.getRuntime().exec("clear");
-			}
-			System.out.println();
 			
-			
+			pauseProg();	
 			
 			//go to the current scene
 			sceneSelect(  scene ); 
 			System.out.println("    ****" + "Scene: "+ (scene++) + " ****    ");
-			
-			//Play hits enter to continue
-			if (scanSub.hasNextLine())
-			{
-				//Clear the screen on the command prompt
-		        final String os = System.getProperty("os.name");
-		        if (os.contains("Windows"))
-		            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-		        else
-		            Runtime.getRuntime().exec("clear");
-			}
-			//hero.Summary();
-
 			
 			
 			 /* If hit points are low, place a magic potion in the Hero's path */
@@ -149,10 +134,11 @@ public class DungeonCrawl extends Scenes{
 			    printf("\n\n\n            (Hit enter)"); 
 			    gets( buffer );*/
 			  }
-			  
+			  //scan.close();
 			
 		}
 
 	}
 
 }
+

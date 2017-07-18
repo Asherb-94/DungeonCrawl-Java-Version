@@ -9,7 +9,7 @@ import java.util.Scanner;
 //|  the hero runs away.
 public class sortie
 {
-    char[] buffer = new char[132];
+    //char[] buffer = new char[132];
     Random random = new Random();
     DungeonCrawl obj = new DungeonCrawl();
   
@@ -20,22 +20,20 @@ public class sortie
         int bothAlive = 1;
         int runAway = 1;
         int hit = 0;
-    
+       
+        Scanner scan = new Scanner(System. in );
         
-        
-        
-        while (bothAlive == 1 && runAway == 1) //maybe problematic
+        while (bothAlive == 1 && runAway == 1)
         {
-        	//Hero.setHitPoints(15);
+        	
         	 
-        	System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck) ");
-            Scanner scan = new Scanner(System. in );
-            //char input = scan.nextLine();
-            char answer = scan.next(".").charAt(0);
-    	    buffer[0] = answer;
+        	System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck): ");
+        	System.out.println();
+            String answer = scan.next();
+    	    
     	    
             //Hero Fights the Monster
-            if (buffer[0] == 'f' || buffer[0] == 'F')
+            if (answer.equals("f") || answer.equals("F"))
             {
                 System.out.print("\n\n\tYou attack the " + monster.getName()+"\n\n");
                 
@@ -75,7 +73,7 @@ public class sortie
                 
                
                 //Hero Runs Away
-                else if (buffer[0] == 'r' || buffer[0] == 'R')
+                else if (answer.equals("r")|| answer.equals("R"))
                 {
                 	
                     System.out.print("\n\tYou run away from the " + monster.getName());
