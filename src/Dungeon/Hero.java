@@ -19,7 +19,7 @@ public class Hero {
 	  
 
 	public void Summary(){
-		  System.out.println("Hero " + name +": " + this.hitPoints + "/" 
+		  System.out.println("Hero " + name +": " + Hero.hitPoints + "/" 
 				  + this.maxHitPoints + "HP; " + this.strength + "/" + this.maxStrength 
 				  + " ST; " + this.gold + " Gold");
 	  }
@@ -28,8 +28,8 @@ public class Hero {
 		return hitPoints;
 	}
 
-	public void setHitPoints(int hitPoints) {
-		this.hitPoints = hitPoints;
+	public static void setHitPoints(int hitPoints) {
+		Hero.hitPoints = hitPoints;
 	}
 
 	public static int getMaxHitPoints() {
@@ -44,32 +44,32 @@ public class Hero {
 		return strength;
 	}
 
-	public void setStrength(int strength) {
-		this.strength = strength;
+	public static void setStrength(int strength) {
+		Hero.strength = strength;
 	}
 
 	public static int getMaxStrength() {
 		return maxStrength;
 	}
 
-	public void setMaxStrength(int maxStrength) {
-		this.maxStrength = maxStrength;
+	public static void setMaxStrength(int maxStrength) {
+		Hero.maxStrength = maxStrength;
 	}
 
 	public static int getPotions() {
 		return potions;
 	}
 
-	public void setPotions(int potions) {
-		this.potions = potions;
+	public static void setPotions(int potions) {
+		Hero.potions = potions;
 	}
 
 	public static int getGold() {
 		return gold;
 	}
 
-	public void setGold(int gold) {
-		this.gold = gold;
+	public static void setGold(int gold) {
+		Hero.gold = gold;
 	}
 	
 	public static String getName(){

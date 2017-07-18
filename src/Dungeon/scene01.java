@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class scene01 {
 	//TODO need external hero
-	static Hero hero;
+	 static Hero hero;
 
 	
 	public scene01(int monsterHit, int monsterStr) throws IOException{

@@ -3,15 +3,16 @@ package Dungeon;
 public class RIP {
 	//TODO: get global hero
 	//Hero hero;
+	Hero hero;
 	
 	public void display(){
-		Hero hero = new Hero(null, 0, 0, 0); //delete when TODO: is done
 		StringBuilder sb = new StringBuilder();
 		int length = 18;
 		String name = hero.getName();
 		
 		//set up text to place into the gravestone so it is the correct length.
-		for(int i = 0; i < ((length - name.length())/2); i++){
+		for(int i = 0; i < (length - name.length())/2; i++)
+		{
 			sb.append(" ");
 		}
 		for(int i = 0; (i < length && i < name.length()); i++){

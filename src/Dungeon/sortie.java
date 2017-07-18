@@ -9,12 +9,10 @@ import java.util.Scanner;
 //|  the hero runs away.
 public class sortie
 {
-    char[] buffer = new char[132];//could be here for error? 
+    char[] buffer = new char[132];
     Random random = new Random();
     DungeonCrawl obj = new DungeonCrawl();
   
-
-	////////
     public sortie(Hero hero, Monster monster)
     {
         int monsterThrow = random.nextInt(monster.getStrength());
@@ -28,6 +26,7 @@ public class sortie
         
         while (bothAlive == 1 && runAway == 1) //maybe problematic
         {
+        	//Hero.setHitPoints(15);
         	 
         	System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck) ");
             Scanner scan = new Scanner(System. in );
@@ -81,20 +80,15 @@ public class sortie
                 	
                     System.out.print("\n\tYou run away from the " + monster.getName());
                     System.out.print("\tThe " + monster.getName() + "throws a shurikin at your back!!\n");
-                    //monsterThrow = (int)(Math.random() * 4) + 1;
-                    monsterThrow = 4;
+                    monsterThrow = (int)(Math.random() * 4) + 1;
+                    //monsterThrow = 4;
                     if (monsterThrow > 3 )
                     {
-                    	int x =0;
+                    	//int x =0;
                         System.out.print("\tIt hits! You lose a hit point\n");
-                        
+                        //TODO fix the error below
                         hero.setHitPoints(hero.getHitPoints()-1);
-                       
-                       
-                     
-                        
-                        
-                       
+                      
                     }
                     else 
                     {
@@ -136,7 +130,8 @@ public class sortie
                 bothAlive = 0;
             }
             
-            hero.Summary();
+            //hero.Summary();
+            obj.heroSummary();
             monster.Summary();
             
             //The monster hears its mommy calling
@@ -146,7 +141,7 @@ public class sortie
                 System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
             }
             //end while
-            
+            //obj.heroSummary();
         }
         runAway = 1;//to turn on runAway 
         //Final Result of the Sortie
@@ -155,14 +150,8 @@ public class sortie
             System.out.print("\n\n\tYou gain strength from your experience\n");
             hero.setStrength(hero.getStrength()+1);
             hero.setMaxStrength(hero.getMaxStrength()+1);
-            hero.Summary();
+            obj.heroSummary();
             System.out.print("\n");
         }
     }
 }
-
-    
-        
-        
-        
-
