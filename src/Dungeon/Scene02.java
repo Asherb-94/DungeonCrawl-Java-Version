@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Scene02 {
 	//TODO global Hero object
-	Hero hero;
+	static Hero hero;
 	
 	public Scene02(int monsterHit, int monsterStr) throws IOException{
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
@@ -91,6 +91,7 @@ public class Scene02 {
 			}
 
 		}
+		//hero.Summary();
 	}
 	
 	public static void main(String args[]) throws IOException{

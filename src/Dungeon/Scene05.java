@@ -9,7 +9,7 @@ public class Scene05 {
 	Hero hero = new Hero("Cedric", 5, 5, 0);
     char[] buffer = new char[132];
 	
-	public Scene05(int monsterHP, int monsterStr) throws IOException{
+	public Scene05() throws IOException{
 		System.out.println("You enter a room full of sparkling purple crystals.\nThey glint in the light of your torch.");
 		System.out.println("Sitting in a geode in the middle of the cavernous room is a strange looking figure... \n\nA wizard.");
 		System.out.println("\n**********");
@@ -46,7 +46,7 @@ public class Scene05 {
     	    else {
     	    	System.out.println("You set the potion down. Out of of the bottle comes a demon from hell.");
     	    	System.out.println("It looks to be a horrible mutant made of all the monsters you've slain.");
-    	    	Monster demon = new Monster("Demon", 7, 5, 3);
+    	    	Monster demon = new Monster("Demon", 6, 5, 3);
     	    	sortie srtie = new sortie(hero, demon);
     	    }    
         }
@@ -77,7 +77,7 @@ public class Scene05 {
     	    		hero.setHitPoints(1);
     	    	}
     	    	else {
-    	    		System.out.println("You pocket the gold and leave the cave the way you came, greateful to come out unscathed.");
+    	    		System.out.println("You pocket the gold and leave the cave the way you came, grateful to come out unscathed.");
     	    		hero.setGold(100);
     	    	}
     	    }
@@ -93,6 +93,6 @@ public class Scene05 {
 	}
 	
 	public static void main(String args[]) throws IOException{
-		Scene05 sc = new Scene05(5, 5);
+		Scene05 sc = new Scene05();
 	}
 }
