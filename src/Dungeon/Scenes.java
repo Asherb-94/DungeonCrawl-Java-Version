@@ -37,7 +37,7 @@ public abstract class Scenes {
 	}
 	
 	static void scene07( int monsterHit, int monsterStr ) throws IOException {
-		Scene06 objScene07 = new Scene06(monsterHit,monsterStr);
+		Scene07 objScene07 = new Scene07(monsterHit,monsterStr);
 		
 	}
 

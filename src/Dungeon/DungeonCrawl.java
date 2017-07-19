@@ -48,8 +48,8 @@ public class DungeonCrawl extends Scenes{
 	  else if ( scene== 3 ) scene03(  3, 3 );// Mouse 
 	  else if ( scene== 4 ) scene04(  4, 4 );// Pumpkin 
 	  else if ( scene== 5 ) scene05(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
-	  else if ( scene== 6 ) scene06(  5, 5 );// Shrek
-	  else if ( scene== 7 ) scene07(  0, 0 );// BoulderScene  
+	  else if ( scene== 7 ) scene06(  0, 0 ); // BoulderScene, makes monster in class 
+	  else if ( scene== 6 ) scene07(  5, 5 ); // Shrek
 	  else if ( scene== 8 ) scene06(  0, 0 );// End scene 
 
 	  else

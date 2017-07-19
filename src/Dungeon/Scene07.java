@@ -10,7 +10,7 @@ public class Scene07 {
 		Hero hero;
 		
 		// start //
-		public Scene07() throws IOException{
+		public Scene07(int monsterHit, int monsterStr) throws IOException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			System.out.println("You continue deeper into the mine.");
 			System.out.println("You come up to a very large boulder.");
@@ -66,7 +66,7 @@ public class Scene07 {
 		}
 		
 		public static void main(String[] args) throws IOException{
-			Scene07 sc = new Scene07();
+			Scene07 sc = new Scene07(0,0);
 		}
 	
 }
