@@ -48,9 +48,10 @@ public class DungeonCrawl extends Scenes{
 	  else if ( scene== 3 ) scene03(  3, 3 );// Mouse 
 	  else if ( scene== 4 ) scene04(  4, 4 );// Pumpkin 
 	  else if ( scene== 5 ) scene05(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
-	  else if ( scene== 7 ) scene06(  0, 0 ); // BoulderScene, makes monster in class 
-	  else if ( scene== 6 ) scene07(  5, 5 ); // Shrek
-	  else if ( scene== 8 ) scene06(  0, 0 );// End scene 
+	  else if ( scene== 6 ) scene07(  0, 0 ); // BoulderScene, makes monster in class 
+	  else if ( scene== 7 ) scene06(  5, 5 ); // Shrek  (fight)
+	  else if ( scene== 8 ) scene08(  0, 0 );// Old Man (fight) 
+	  //else if ( scene== 9 ) scene09(  0, 0 );
 
 	  else
 	  {
@@ -65,7 +66,7 @@ public class DungeonCrawl extends Scenes{
 
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
-	    int sceneCount = 1;
+	    int sceneCount = 0;
 		Scanner scan = new Scanner(System.in);
 		int scene = 0; //starts at the first scene 
 		
@@ -82,7 +83,7 @@ public class DungeonCrawl extends Scenes{
 		heroSummary();
 		//only runs once ^
 		//loops after that below (down arrow)
-		while (hero.getHitPoints() > 0 && scene <= 6)
+		while (hero.getHitPoints() > 0 && scene <= 9)
 		{
 			
 			pauseProg();	
@@ -109,7 +110,7 @@ public class DungeonCrawl extends Scenes{
 			    objRIP.display();
 			  }
 			  
-			  if(scene == 7)
+			  if(scene == 9)
 			  {
 				int finalGold = 0;
 			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");

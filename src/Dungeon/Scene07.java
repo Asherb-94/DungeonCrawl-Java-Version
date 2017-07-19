@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Scene07 {
 	//TODO global hero object
-		Hero hero;
+		static Hero hero;
 		
 		// start //
 		public Scene07(int monsterHit, int monsterStr) throws IOException{
@@ -52,7 +52,7 @@ public class Scene07 {
 			}
 		}
 		
-		private void goAround(){
+		private static void goAround(){
 			System.out.println("You try to squeeze through a small gap inbetween the boulder and the cave wall.");
 			Random random = new Random();
 		    int toss = random.nextInt(2);
@@ -67,6 +67,7 @@ public class Scene07 {
 		
 		public static void main(String[] args) throws IOException{
 			Scene07 sc = new Scene07(0,0);
+			//goAround();
 		}
 	
 }
