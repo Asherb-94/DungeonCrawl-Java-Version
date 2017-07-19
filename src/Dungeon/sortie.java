@@ -25,10 +25,7 @@ public class sortie
         int bothAlive = 1;
         int runAway = 1;
         int hit = 0;
-       
-       
 
-        
         while (bothAlive == 1 && runAway == 1)
         {
         	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
@@ -36,12 +33,6 @@ public class sortie
         	System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck): ");
         	System.out.println();
             String answer = input.readLine();
-
-                
-        	//String answer = scan.next();
-            //String answer = scan.nextLine();//TODO fix this 
-            
-    	    
     	    
             //Hero Fights the Monster
             if (answer.equals("f") || answer.equals("F"))
@@ -137,9 +128,7 @@ public class sortie
                 System.out.print("\tThe " + monster.getName() + " drops dead.\n\n");
                 bothAlive = 0;
             }
-            
-            //hero.Summary();
-            obj.heroSummary();
+            obj.heroSummary();//obj is the call to hero class 
             monster.Summary();
             
             //The monster hears its mommy calling
@@ -149,8 +138,6 @@ public class sortie
                 System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
             }
             //end while
-            //obj.heroSummary();
-            //input.close();
         }
         runAway = 1;//to turn on runAway 
         //Final Result of the Sortie

@@ -33,7 +33,7 @@ public class Scene03 {
 		
 		if (ans.equals("y") || ans.equals("Y")){
 			Random random = new Random();
-			int toss = random.nextInt(13);
+			int toss = random.nextInt(20)+5;
 			
 			if (toss < 3){
 				System.out.println("Your actions show disrespect for the fallen.");

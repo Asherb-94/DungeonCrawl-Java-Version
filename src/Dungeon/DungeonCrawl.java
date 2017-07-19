@@ -10,15 +10,6 @@ public class DungeonCrawl extends Scenes{
 	private int strength;
 	private String name;
 	private int gold;
-	 
-	
-/*	public void makeActor(String name, int hitPoints, int strength, int gold)//has to do with actor,now hero class?; 
-	{
-		this.name = name;
-		this.hitPoints = hitPoints;
-		this.strength = strength;
-		this.gold = gold;
-	}*/
 	
 	public static void heroSummary()
 	{
@@ -62,8 +53,7 @@ public class DungeonCrawl extends Scenes{
 	    System.out.print(" No such scene number ");
 	  }
 	  
-	 
-	}
+}
 	
 	
 	
@@ -135,7 +125,7 @@ public class DungeonCrawl extends Scenes{
 			    printf("\n\n\n            (Hit enter)"); 
 			    gets( buffer );*/
 			  }
-			  //scan.close();
+			
 			
 		}
 

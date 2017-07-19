@@ -1,16 +1,19 @@
 package Dungeon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
 public class PotionScene {
 	//TODO need external hero
-	static Hero hero = new Hero("Lydia", 5, 5, 0);
+	static Hero hero;
 	
 	// The following types of potions correspond to each //
 	static int[] potions = {0, 1, 2, 3};
 	static int potionInit = 0;
 	
-	public static void potionScene(){
+	public static void potionScene() throws IOException{
 		int toss;
 		int tossA;
 		int tossB;
@@ -49,8 +52,9 @@ public class PotionScene {
 		
 		System.out.print(color + "potion. Do you wish to drink it? (y/n)");
 		
-		Scanner scanner = new Scanner(System.in);
-		String ans = scanner.nextLine();
+
+		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
+		String ans = input.readLine();
 		
 		if (ans.equals("y") || ans.equals("Y")){
 			if (toss == potions[0]){
@@ -71,11 +75,11 @@ public class PotionScene {
 				hero.setHitPoints(hero.getHitPoints()-1);
 			}
 		hero.setMaxHitPoints(hero.getMaxHitPoints()-1);
-		scanner.close();
+		
 		}
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		potionScene();
 	}
 }

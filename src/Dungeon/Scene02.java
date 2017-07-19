@@ -17,9 +17,6 @@ public class Scene02 {
 		System.out.println("\nDo you wish to open the box? (y or n)");
 		
 		String ans = input.readLine();
-		//Scanner scanner = new Scanner(System.in);
-		//String ans = scanner.nextLine();
-		
 		if (ans.equals("y") || ans.equals("Y"))
 		{
 
@@ -92,8 +89,7 @@ public class Scene02 {
 					System.out.println("\nNothing happens.\n\n");
 				}
 			}
-		//scanner.close();
-		//input.close();
+
 		}
 	}
 	
