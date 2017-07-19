@@ -28,21 +28,28 @@ public class BoulderScene {
 		
 		private void climb() throws IOException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
-			System.out.println("You climb to the top of the boulder and spot a golden chest. Would you like to open the chest? (y or n)");
-			String ans = input.readLine();
-			if (ans.equals("y") || ans.equals("Y")){
-				System.out.println("You open the chest and a skeleton hand reaches for you!");
-				Monster monster = new Monster("Skeleton Hand", 1, 1, 0);
-				sortie sortie = new sortie(hero, monster);
-				if(hero.getHitPoints()> 0){
-					System.out.println("You find 5 gold coins in the chest.");
-					hero.setGold(hero.getGold()+5);
-					System.out.println("You climb down the boulder and continue on.");
+			if(hero.getStrength() > 6){
+				System.out.println("You climb to the top of the boulder and spot a golden chest. Would you like to open the chest? (y or n)");
+				String ans = input.readLine();
+				if (ans.equals("y") || ans.equals("Y")){
+					System.out.println("You open the chest and a skeleton hand reaches for you!");
+					Monster monster = new Monster("Skeleton Hand", 1, 1, 0);
+					sortie sortie = new sortie(hero, monster);
+					if(hero.getHitPoints()> 0){
+						System.out.println("You find 5 gold coins in the chest.");
+						hero.setGold(hero.getGold()+5);
+						System.out.println("You climb down the boulder and continue on.");
+					}
+					
 				}
-				
+				else
+					System.out.println("You climb down the boulder and continue on.");
 			}
-			else
-				System.out.println("You climb down the boulder and continue on.");
+			else{
+				System.out.println("You try to climb the boulder, but fail.");
+				System.out.println("You realize you are not strong enough and decide to go around the boulder.");
+				goAround();
+			}
 		}
 		
 		private void goAround(){
