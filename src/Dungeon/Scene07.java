@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-public class BoulderScene {
+public class Scene07 {
 	//TODO global hero object
 		Hero hero;
 		
 		// start //
-		public BoulderScene() throws IOException{
+		public Scene07() throws IOException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			System.out.println("You continue deeper into the mine.");
 			System.out.println("You come up to a very large boulder.");
@@ -66,7 +66,7 @@ public class BoulderScene {
 		}
 		
 		public static void main(String[] args) throws IOException{
-			BoulderScene sc = new BoulderScene();
+			Scene07 sc = new Scene07();
 		}
 	
 }
