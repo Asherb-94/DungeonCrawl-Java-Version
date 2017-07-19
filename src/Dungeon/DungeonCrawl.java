@@ -41,13 +41,15 @@ public class DungeonCrawl extends Scenes{
 	
 	static void sceneSelect( int scene ) throws IOException
 	{
-	  if      ( scene== 0 ) scene00();  /* monster-hitpoints, monster-strength  */
-	  else if ( scene== 1 ) scene01(  2, 2 );// Bat
+     //Final Monster Health and Strength 
+	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */
+	  else if ( scene== 1 ) scene01(  2, 2 );// Bat 2 2
 	  else if ( scene== 2 ) scene02(  0, 0 );// Non fighting scene 
 	  else if ( scene== 3 ) scene03(  3, 3 );// Mouse 
-	  else if ( scene== 4 ) scene04(  5, 5 );
-	  else if ( scene== 5 ) scene05(  7, 7 );
-	  else if ( scene== 6 ) scene06(  9, 5 );
+	  else if ( scene== 4 ) scene04(  4, 4 );// Pumpkin 
+	  else if ( scene== 5 ) scene05(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
+	  else if ( scene== 6 ) scene06(  5, 5 );// Shrek
+	  else if ( scene== 7 ) scene06(  0, 0 );// End scene 
 
 	  else
 	  {
@@ -71,14 +73,7 @@ public class DungeonCrawl extends Scenes{
 		objSplash.splash();//calls constructor and displays title 
 	    
 		System.out.println("\n\n      (Hit Enter)");
-		if (scan.hasNextLine())
-		{
-			//Clear the screen on the command prompt
-	        final String os = System.getProperty("os.name");
-	        if (os.contains("Windows"))
-	            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-	        else
-	            Runtime.getRuntime().exec("clear");
+		if (scan.hasNextLine()){
 		}
 	
 		Intro obj = new Intro();//where hero is created the frist time..name,health,strength,gold
@@ -86,9 +81,6 @@ public class DungeonCrawl extends Scenes{
 		heroSummary();
 		//only runs once ^
 		//loops after that below (down arrow)
-		Scanner scanSub = new Scanner(System.in);
-		//scan.reset();
-		
 		while (hero.getHitPoints() > 0 && scene <= 6)
 		{
 			
@@ -96,8 +88,8 @@ public class DungeonCrawl extends Scenes{
 			
 			//go to the current scene
 			System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
-			scene++;//goes to the next scene 
 			sceneSelect(  scene ); 
+			scene++;//goes to the next scene 
 			
 			
 			
@@ -115,18 +107,14 @@ public class DungeonCrawl extends Scenes{
 			    RIP objRIP = new RIP();
 			    objRIP.display();
 			  }
-			  if(scene == 6)
+			  
+			  if(scene == 7)
 			  {
 				int finalGold = 0;
 			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");
 			    finalGold = hero.getGold() + 100;
 			    System.out.print("  You now have " + finalGold + " pieces of gold and have WON the game.\n\n");
-			    //System.out.println("            (Hit enter)"); 
-/*			    gets( buffer ); 
-			    system("cls");
-			    winner( hero.gold );
-			    printf("\n\n\n            (Hit enter)"); 
-			    gets( buffer );*/
+
 			  }
 			
 			

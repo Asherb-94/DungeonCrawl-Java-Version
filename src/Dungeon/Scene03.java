@@ -61,7 +61,6 @@ public class Scene03 {
 	}
 	
 	public static void main(String args[]) throws IOException{
-		//Scene03 sc = new Scene03(5, 5);
 		scene03part2();
 	}
 }

@@ -145,8 +145,8 @@ public class sortie
         if (runAway == 1 && hero.getHitPoints() > 0) 
         {
             System.out.print("\n\n\tYou gain strength from your experience\n");
-            hero.setStrength(hero.getStrength()+1);
-            hero.setMaxStrength(hero.getMaxStrength()+1);
+            hero.setStrength(hero.getStrength()+2);
+            hero.setMaxStrength(hero.getMaxStrength()+2);
             obj.heroSummary();
             System.out.print("\n");
         }

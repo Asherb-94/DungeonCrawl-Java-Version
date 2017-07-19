@@ -13,7 +13,7 @@ public class Intro {
 	{
 		char answer;
 		Scanner scan = new Scanner(System.in);
-		System.out.print("\n\n\n\n");
+		System.out.print("\n\n");
 		System.out.print("  You approach a ruined dwarven mine, ");
 		System.out.print("  rummored to be filled with lost treasure, \n");
 		System.out.print("  but guarded by ");
@@ -39,9 +39,9 @@ public class Intro {
 	    	System.out.println("  Spoken like a true Hero!.  ");
 	    	while (flag == 1)// loop for name length
 	    	{
-	    		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    		
 		    	System.out.println("  Enter your name, Hero: ");
-		    	Hero objHero = new Hero(objName.next(),4,4,0);//not using buffer for global name? 
+		    	Hero objHero = new Hero(objName.next(),4,4,0);
 		    	
 		    	if (objHero.getName().isEmpty())
 		    	{

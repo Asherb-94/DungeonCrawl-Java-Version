@@ -32,7 +32,7 @@ public abstract class Scenes {
 		
 	}
 	static void scene06( int monsterHit, int monsterStr ) throws IOException {
-		ShrekScene objScene04 = new ShrekScene(monsterHit,monsterStr);
+		Scene06 objScene04 = new Scene06(monsterHit,monsterStr);
 		
 	}
 
