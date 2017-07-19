@@ -54,7 +54,7 @@ public class Scene03 {
 				hero.setGold(hero.getGold()+toss);
 			}
 		}
-		scanner.close();
+		//scanner.close();
 	}
 	
 	public static void main(String args[]){

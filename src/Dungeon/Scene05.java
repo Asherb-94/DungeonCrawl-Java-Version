@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Scene05 {
 	//TODO make global hero or pass it as parameter
+	DungeonCrawl obj = new DungeonCrawl();
 	Hero hero;
     char[] buffer = new char[132];
 	
@@ -87,7 +88,7 @@ public class Scene05 {
     	    }
         }
         
-        hero.Summary();
+        obj.heroSummary();
 		
 		
 	}
