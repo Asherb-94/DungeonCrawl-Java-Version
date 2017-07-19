@@ -11,6 +11,7 @@ public class DungeonCrawl extends Scenes{
 	private String name;
 	private int gold;
 	
+	
 	public static void heroSummary()
 	{
 		System.out.println((Hero.getName() +": " + Hero.getHitPoints() + "/" 
@@ -41,9 +42,9 @@ public class DungeonCrawl extends Scenes{
 	static void sceneSelect( int scene ) throws IOException
 	{
 	  if      ( scene== 0 ) scene00();  /* monster-hitpoints, monster-strength  */
-	  else if ( scene== 1 ) scene01(  2, 2 );
-	  else if ( scene== 2 ) scene02(  0, 0 );
-	  else if ( scene== 3 ) scene03(  3, 3 );
+	  else if ( scene== 1 ) scene01(  2, 2 );// Bat
+	  else if ( scene== 2 ) scene02(  0, 0 );// Non fighting scene 
+	  else if ( scene== 3 ) scene03(  3, 3 );// Mouse 
 	  else if ( scene== 4 ) scene04(  5, 5 );
 	  else if ( scene== 5 ) scene05(  7, 7 );
 	  else if ( scene== 6 ) scene06(  9, 5 );
@@ -61,9 +62,9 @@ public class DungeonCrawl extends Scenes{
 
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
-		
+	    int sceneCount = 1;
 		Scanner scan = new Scanner(System.in);
-		int scene = 0; //current scene number
+		int scene = 0; //starts at the first scene 
 		
 		//Splash Screen aka Title screen
 		Splash objSplash = new Splash();//create obj splash
@@ -94,8 +95,10 @@ public class DungeonCrawl extends Scenes{
 			pauseProg();	
 			
 			//go to the current scene
+			System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
+			scene++;//goes to the next scene 
 			sceneSelect(  scene ); 
-			System.out.println("    ****" + "Scene: "+ (scene++) + " ****    ");
+			
 			
 			
 			 /* If hit points are low, place a magic potion in the Hero's path */
