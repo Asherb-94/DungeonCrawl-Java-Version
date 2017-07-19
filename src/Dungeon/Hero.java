@@ -36,8 +36,8 @@ public class Hero {
 		return maxHitPoints;
 	}
 
-	public void setMaxHitPoints(int maxHitPoints) {
-		this.maxHitPoints = maxHitPoints;
+	public static void setMaxHitPoints(int maxHitPoints) {
+		Hero.maxHitPoints = maxHitPoints;
 	}
 
 	public static int getStrength() {

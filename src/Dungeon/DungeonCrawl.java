@@ -94,7 +94,7 @@ public class DungeonCrawl extends Scenes{
 			
 			
 			 /* If hit points are low, place a magic potion in the Hero's path */
-			  if (  hero.getHitPoints() > 0 && hero.getHitPoints() < scene/4 + 2  ) 
+			  if (  hero.getHitPoints() > 0) //&& hero.getHitPoints() <  ) //scene/4 +2 
 			  {
 				  PotionScene objPotion = new PotionScene();
 				  objPotion.potionScene();

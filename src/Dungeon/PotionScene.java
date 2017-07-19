@@ -3,11 +3,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class PotionScene {
 	//TODO need external hero
-	static Hero hero;
+      static Hero hero;
 	
 	// The following types of potions correspond to each //
 	static int[] potions = {0, 1, 2, 3};
@@ -57,24 +57,31 @@ public class PotionScene {
 		String ans = input.readLine();
 		
 		if (ans.equals("y") || ans.equals("Y")){
-			if (toss == potions[0]){
+			if (toss == potions[0])
+			{
 				System.out.println("This tastes great!\nYour max hitpoints increase!\n");
-				hero.setMaxHitPoints(random.nextInt(3));
+				hero.setMaxStrength(hero.getMaxStrength()+3);// Strength: x/x+1
+				hero.setHitPoints(hero.getMaxHitPoints());//  Strength: x+1/x
 			}
 			
-			else if (toss == potions[1]){
+			else if (toss == potions[1])
+			{
 				System.out.println("It tastes like maple syrup.\nYou feel warm all over.\nYour hitpoints are restored!");
 				hero.setHitPoints(hero.getMaxHitPoints());
 			}
 			
-			else if (toss == potions[2]){
+			else if (toss == potions[2])
+			{
 				System.out.println("It tastes like warm apple juice.\nNothing happens.");
 			}
-			else {
+			else 
+			{
 				System.out.println("It tastes like yellow snow. \nThis is not good.");
 				hero.setHitPoints(hero.getHitPoints()-1);
 			}
-		hero.setMaxHitPoints(hero.getMaxHitPoints()-1);
+		//hero.setMaxHitPoints(hero.getMaxHitPoints()-1);
+			hero.setMaxStrength(hero.getMaxStrength()+1);// Strength: x/x+1
+			hero.setStrength(hero.getMaxStrength());//  Strength: x+1/x
 		
 		}
 	}
