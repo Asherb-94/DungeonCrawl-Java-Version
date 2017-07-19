@@ -60,8 +60,9 @@ public class PotionScene {
 			if (toss == potions[0])
 			{
 				System.out.println("This tastes great!\nYour max hitpoints increase!\n");
-				hero.setMaxStrength(hero.getMaxStrength()+3);// Strength: x/x+1
+				hero.setMaxHitPoints(hero.getMaxHitPoints()+3);// Strength: x/x+1
 				hero.setHitPoints(hero.getMaxHitPoints());//  Strength: x+1/x
+
 			}
 			
 			else if (toss == potions[1])
@@ -79,9 +80,6 @@ public class PotionScene {
 				System.out.println("It tastes like yellow snow. \nThis is not good.");
 				hero.setHitPoints(hero.getHitPoints()-1);
 			}
-		//hero.setMaxHitPoints(hero.getMaxHitPoints()-1);
-			hero.setMaxStrength(hero.getMaxStrength()+1);// Strength: x/x+1
-			hero.setStrength(hero.getMaxStrength());//  Strength: x+1/x
 		
 		}
 	}
