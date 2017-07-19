@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class Scene05 {
 	//TODO make global hero or pass it as parameter
-	Hero hero = new Hero("Cedric", 5, 5, 0);
+	DungeonCrawl obj = new DungeonCrawl();
+	Hero hero;
     char[] buffer = new char[132];
 	
 	public Scene05() throws IOException{
@@ -87,7 +88,7 @@ public class Scene05 {
     	    }
         }
         
-        hero.Summary();
+        obj.heroSummary();
 		
 		
 	}

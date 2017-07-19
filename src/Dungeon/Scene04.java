@@ -2,14 +2,13 @@ package Dungeon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+
 
 public class Scene04 {
 	//TODO global hero object
 	Hero hero;
 	int monsterHit;
 	int monsterStr;
-	Scanner scan = new Scanner(System.in);
 	
 	// start //
 	public Scene04(int monsterHit, int monsterStr) throws IOException{
@@ -31,13 +30,15 @@ public class Scene04 {
 	}
 	
 	private void leftChoice() throws IOException{
+		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You see a sign in front of an orange bag: ");
 		System.out.println("     Trick or Treat!!!\n\n");
 		System.out.println("Do you put a piece of gold in the bag? (y or n)");
 		
 		//TODO add conditional for if you don't have any gold
 		
-		String ans = scan.nextLine();
+		//String ans = scan.nextLine();
+		String ans = input.readLine();
 		if (ans.equals("Y") || ans.equals("y")){
 			hero.setGold(hero.getGold()+1);
 			System.out.println("Wise choice. You continue down the tunnel.");

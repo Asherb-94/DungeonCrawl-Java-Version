@@ -8,20 +8,25 @@ public class Scene03 {
 	//TODO global hero object
 	static Hero hero;
 
-	public Scene03(int monsterHit, int monsterStr) throws IOException{
+	public Scene03(int monsterHit, int monsterStr) throws IOException{//Fighting Scene 
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");
-		
+
 		Monster monster = new Monster("Mouse", monsterHit, monsterStr, 0);
 		monster.Summary();
-		
-		sortie sortie = new sortie(hero, monster);
+
+		sortie sortie = new sortie(hero, monster);//Call to sortie
 		
 		if (hero.getHitPoints() > 0 && monster.getHitPoints() <= 0){
 			scene03part2();
 		}
 	}
+	
+	
+	
+	
+	
 	
 	private static void scene03part2(){
 		System.out.println("The dead mouse lies at your feet.");
@@ -49,7 +54,7 @@ public class Scene03 {
 				hero.setGold(hero.getGold()+toss);
 			}
 		}
-		scanner.close();
+		//scanner.close();
 	}
 	
 	public static void main(String args[]){

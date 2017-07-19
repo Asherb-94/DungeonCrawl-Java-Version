@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class ShrekScene {
 	
-	Hero hero = new Hero("Fiona", 5, 5, 5);
+	Hero hero;
 	
-	public ShrekScene() throws IOException{
+	public ShrekScene(int monsterHit, int monsterStr ) throws IOException{//Fighting Scene BOSS 
 		System.out.println("As you continue into the cave, the floor starts getting muddier.");
 		System.out.println("A stench fills your nostrils like none you've ever smelled.");
 		System.out.println("You round a corner and see a hut with a huge, green monster standing outside of it.");
@@ -44,13 +44,14 @@ public class ShrekScene {
 		
 		System.out.println("\n\nYou prepare for battle.");
 		
-		Monster shrek = new Monster("Shrek", 6, 6, 0);
-		sortie sort = new sortie(hero, shrek);
+		Monster monster = new Monster("Shrek", monsterHit, monsterStr, 0);
+		monster.Summary();
+		sortie sort = new sortie(hero, monster);
 		
 	}
 
 	public static void main(String[] args) throws IOException {
-		ShrekScene shrek = new ShrekScene();
+		ShrekScene shrek = new ShrekScene(5, 5);
 
 	}
 
