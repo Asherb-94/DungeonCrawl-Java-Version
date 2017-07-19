@@ -15,7 +15,7 @@ public class Scene04 {
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
-		System.out.println();
+		//System.out.println();
 		
 		this.monsterHit = monsterHit;
 		this.monsterStr = monsterStr;
