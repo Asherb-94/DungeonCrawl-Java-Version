@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Scene02 {
-	//TODO global Hero object
+public class Scene02 {//Non fighting Scene 
+	
 	Hero hero;
 	
 	public Scene02(int monsterHit, int monsterStr) throws IOException{
