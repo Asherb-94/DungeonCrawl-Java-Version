@@ -1,5 +1,7 @@
 package Dungeon;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,13 +30,14 @@ public class Scene03 {
 	
 	
 	
-	private static void scene03part2(){
+	private static void scene03part2() throws IOException{
+		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("The dead mouse lies at your feet.");
 		System.out.println("You feel like kicking it into the darkness.");
 		System.out.println("Do you kick the dead mouse? (y or n)");
 		
-		Scanner scanner = new Scanner(System.in);
-		String ans = scanner.nextLine();
+		//Scanner scanner = new Scanner(System.in);
+		String ans = input.readLine();
 		
 		if (ans.equals("y") || ans.equals("Y")){
 			Random random = new Random();
@@ -57,7 +60,7 @@ public class Scene03 {
 		//scanner.close();
 	}
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws IOException{
 		//Scene03 sc = new Scene03(5, 5);
 		scene03part2();
 	}
