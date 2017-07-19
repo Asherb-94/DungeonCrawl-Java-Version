@@ -74,7 +74,7 @@ public class Scene05 {
     	    //buffer[0] = answer;
         	String answerTwo = input.readLine();
     	    
-    	    if (answerTwo.equals("b")|| answerTwo.equals("B")){
+    	    if (answerTwo.equals("a")|| answerTwo.equals("A")){
 	    		System.out.println("Hesitantly, you move toward the wizard and take the bag of gold in his hand.");
     	    	if (toss == 0){
     	    		System.out.println("Ow!! The gold is molten hot and melts through your hand!");
