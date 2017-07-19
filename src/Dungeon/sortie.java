@@ -1,5 +1,8 @@
 package Dungeon;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,8 +15,10 @@ public class sortie
     //char[] buffer = new char[132];
     Random random = new Random();
     DungeonCrawl obj = new DungeonCrawl();
+    
+    Scanner scan = new Scanner(System. in );
   
-    public sortie(Hero hero, Monster monster)
+    public sortie(Hero hero, Monster monster) throws IOException
     {
         int monsterThrow = random.nextInt(monster.getStrength());
         int heroThrow;
@@ -21,15 +26,21 @@ public class sortie
         int runAway = 1;
         int hit = 0;
        
-        Scanner scan = new Scanner(System. in );
+       
+
         
         while (bothAlive == 1 && runAway == 1)
         {
-        	
+        	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
         	 
         	System.out.print("\n\n\tWhat do you wish to do? (f fight, r run away, d duck): ");
         	System.out.println();
-            String answer = scan.next();
+            String answer = input.readLine();
+
+                
+        	//String answer = scan.next();
+            //String answer = scan.nextLine();//TODO fix this 
+            
     	    
     	    
             //Hero Fights the Monster
@@ -139,9 +150,11 @@ public class sortie
             }
             //end while
             //obj.heroSummary();
+            //input.close();
         }
         runAway = 1;//to turn on runAway 
         //Final Result of the Sortie
+        
         if (runAway == 1 && hero.getHitPoints() > 0) 
         {
             System.out.print("\n\n\tYou gain strength from your experience\n");

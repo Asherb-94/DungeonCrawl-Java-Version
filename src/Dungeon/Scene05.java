@@ -1,5 +1,6 @@
 package Dungeon;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class Scene05 {
 	Hero hero = new Hero("Cedric", 5, 5, 0);
     char[] buffer = new char[132];
 	
-	public Scene05(int monsterHP, int monsterStr){
+	public Scene05(int monsterHP, int monsterStr) throws IOException{
 		System.out.println("You enter a room full of sparkling purple crystals.\nThey glint in the light of your torch.");
 		System.out.println("Sitting in a geode in the middle of the cavernous room is a strange looking figure... \n\nA wizard.");
 		System.out.println("\n**********");
@@ -91,7 +92,7 @@ public class Scene05 {
 		
 	}
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws IOException{
 		Scene05 sc = new Scene05(5, 5);
 	}
 }

@@ -41,6 +41,7 @@ public class DungeonCrawl extends Scenes{
 	
 	public static void pauseProg(){
 		System.out.println("\n\n    (Hit Enter)");
+		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		keyboard.hasNextLine();
 	}

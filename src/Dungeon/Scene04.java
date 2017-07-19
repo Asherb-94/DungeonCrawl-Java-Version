@@ -1,4 +1,7 @@
 package Dungeon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Scene04 {
@@ -9,7 +12,8 @@ public class Scene04 {
 	Scanner scan = new Scanner(System.in);
 	
 	// start //
-	public Scene04(int monsterHit, int monsterStr){
+	public Scene04(int monsterHit, int monsterStr) throws IOException{
+		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
 		System.out.println();
@@ -17,7 +21,8 @@ public class Scene04 {
 		this.monsterHit = monsterHit;
 		this.monsterStr = monsterStr;
 		
-		String ans = scan.nextLine();
+		//String ans = scan.nextLine();
+		String ans = input.readLine();
 		if (ans.equals("L") || ans.equals("l"))
 			leftChoice();
 		
@@ -25,7 +30,7 @@ public class Scene04 {
 			rightChoice();
 	}
 	
-	private void leftChoice(){
+	private void leftChoice() throws IOException{
 		System.out.println("You see a sign in front of an orange bag: ");
 		System.out.println("     Trick or Treat!!!\n\n");
 		System.out.println("Do you put a piece of gold in the bag? (y or n)");
@@ -49,7 +54,7 @@ public class Scene04 {
 		hero.setGold(hero.getGold()+10);
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		Scene04 sc = new Scene04(5, 5);
 	}
 }

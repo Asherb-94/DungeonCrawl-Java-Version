@@ -1,4 +1,5 @@
 package Dungeon;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ public class Scene03 {
 	//TODO global hero object
 	static Hero hero;
 
-	public Scene03(int monsterHit, int monsterStr){
+	public Scene03(int monsterHit, int monsterStr) throws IOException{
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");

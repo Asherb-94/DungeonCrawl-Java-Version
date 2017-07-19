@@ -1,4 +1,7 @@
 package Dungeon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,20 +9,23 @@ public class Scene02 {
 	//TODO global Hero object
 	Hero hero;
 	
-	public Scene02(int monsterHit, int monsterStr){
+	public Scene02(int monsterHit, int monsterStr) throws IOException{
+		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("\n\n\n\nYou go deeper into the mine.\n");
 		System.out.println("You find a small chest.");
 		System.out.println("On the chest is an inscription in a mystical language ");
 		System.out.println("\nDo you wish to open the box? (y or n)");
 		
-		Scanner scanner = new Scanner(System.in);
-		String ans = scanner.nextLine();
+		String ans = input.readLine();
+		//Scanner scanner = new Scanner(System.in);
+		//String ans = scanner.nextLine();
 		
 		if (ans.equals("y") || ans.equals("Y"))
 		{
-			Random random = new Random();
-			int rand = random.nextInt()%6;//not %6 there before TEST
-			rand = rand%6;
+
+
+			 Random randSub = new Random();
+			 int  rand = randSub.nextInt(6);
 			
 			if (rand == 0)
 			{
@@ -38,7 +44,8 @@ public class Scene02 {
 				System.out.println("Do you drink the potion? (y or n)");
 				
 				
-				String ansSubOne = scanner.next();
+				//String ansSubOne = scanner.next();
+				String ansSubOne = input.readLine();
 				if (ansSubOne.equals("y") || ansSubOne.equals("Y"))
 				{
 					System.out.println("\nYour hit points are restored.");
@@ -51,7 +58,9 @@ public class Scene02 {
 				System.out.println("Do you drink the potion? (y or n)");
 				
 				
-				String ansSubTwo = scanner.next();
+				//String ansSubTwo = scanner.next();
+				String ansSubTwo = input.readLine();
+				
 				if (ansSubTwo.equals("y") || ansSubTwo.equals("Y"))
 				{
 					System.out.println("\nYour strength is increased.\n\n");
@@ -63,7 +72,8 @@ public class Scene02 {
 				System.out.println("You find a yucky green magic potion.");
 				System.out.println("Do you drink the potion? (y or n)");
 				
-				String ansSubThree = scanner.nextLine();
+				//String ansSubThree = scanner.nextLine();
+				String ansSubThree = input.readLine();
 				if (ansSubThree.equals("y") || ansSubThree.equals("Y"))
 				{
 					System.out.println("\nYou feel ill.\n\n");
@@ -75,17 +85,19 @@ public class Scene02 {
 				System.out.println("You find an orange magic potion.");
 				System.out.println("Do you drink the potion? (y or n)");
 				
-				String ansSubFour = scanner.nextLine();
+				//String ansSubFour = scanner.nextLine();
+				String ansSubFour = input.readLine();
 				if (ansSubFour.equals("y") || ansSubFour.equals("Y"))
 				{
 					System.out.println("\nNothing happens.\n\n");
 				}
 			}
-		scanner.close();
+		//scanner.close();
+		//input.close();
 		}
 	}
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws IOException{
 		Scene02 sc = new Scene02(5, 5);
 	}
 }
