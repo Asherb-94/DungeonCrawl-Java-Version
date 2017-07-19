@@ -60,8 +60,8 @@ public class Scene05 {
         	System.out.println("Suddenly feeling woozy, you fall to the ground.");
         	System.out.println("As you slowly fade out of consciousness, you hear the cackling of the wizard.");
         	hero.setHitPoints(0);
-        	RIP rip = new RIP();
-        	rip.display();
+        	//RIP rip = new RIP();
+        	//rip.display();
         }
         
         else {

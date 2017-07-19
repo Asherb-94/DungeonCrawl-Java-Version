@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 public class Scene02 {//Non fighting Scene 
-	
+
 	Hero hero;
 	
 	public Scene02(int monsterHit, int monsterStr) throws IOException{
@@ -22,9 +22,10 @@ public class Scene02 {//Non fighting Scene
 		{
 
 
-			 Random randSub = new Random();
-			 int  rand = randSub.nextInt(6);
-			
+			 /*Random randSub = new Random();
+			 int  rand = randSub.nextInt(3)+3;//change to 6 and +0
+*/			
+			int rand = 3;
 			if (rand == 0)
 			{
 				System.out.println("You open the box. A burst of poison gas hits you. You die.\n");
@@ -62,7 +63,9 @@ public class Scene02 {//Non fighting Scene
 				if (ansSubTwo.equals("y") || ansSubTwo.equals("Y"))
 				{
 					System.out.println("\nYour strength is increased.\n\n");
-					hero.setMaxStrength(hero.getMaxStrength()+1);
+					hero.setMaxStrength(hero.getMaxStrength()+1);// Strength: x/x+1
+					hero.setStrength(hero.getMaxStrength());//  Strength: x+1/x
+					
 				}
 			}
 		    if (rand == 4)
@@ -83,12 +86,14 @@ public class Scene02 {//Non fighting Scene
 				System.out.println("You find an orange magic potion.");
 				System.out.println("Do you drink the potion? (y or n)");
 				
-				//String ansSubFour = scanner.nextLine();
+
 				String ansSubFour = input.readLine();
 				if (ansSubFour.equals("y") || ansSubFour.equals("Y"))
 				{
 					System.out.println("\nNothing happens.\n\n");
 				}
+
+				
 			}
 
 		}
