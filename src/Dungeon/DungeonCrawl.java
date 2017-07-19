@@ -50,12 +50,12 @@ public class DungeonCrawl extends Scenes{
 	  else if ( scene== 5 ) scene05(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
 	  else if ( scene== 6 ) scene07(  0, 0 ); // BoulderScene, makes monster in class 
 	  else if ( scene== 7 ) scene06(  5, 5 ); // Shrek  (fight)
-	  else if ( scene== 8 ) scene08(  0, 0 );// Old Man (fight) 
+	  else if ( scene== 8 ) scene08(  7, 10 );// Old Man (fight) 
 	  //else if ( scene== 9 ) scene09(  0, 0 );
 
 	  else
 	  {
-	    System.out.print(" No such scene number ");
+	    System.out.print(" More to come! (If Rob helps out) ");
 	  }
 	  
 }
