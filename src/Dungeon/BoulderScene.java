@@ -56,7 +56,7 @@ public class BoulderScene {
 			System.out.println("You try to squeeze through a small gap inbetween the boulder and the cave wall.");
 			Random random = new Random();
 		    int toss = random.nextInt(2);
-			if(hero.getStrength()+toss > 7){
+			if(hero.getStrength()+toss > 6){
 				System.out.println("You successfully get past the boulder.");
 			}
 			else{

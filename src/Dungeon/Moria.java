@@ -9,6 +9,7 @@ public class Moria {
 	Hero hero;
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	Random random = new Random();
+	DungeonCrawl objDungeon = new DungeonCrawl();
 	
 	private void orc() throws IOException{
 		System.out.println("You head back the way you came. Strangely, you don't remember walking so long to get back...");
@@ -39,6 +40,7 @@ public class Moria {
 	
 	private void balrogSortie() throws IOException{
     	Monster balrog = new Monster("balrog", 10, 8, 0);
+    	balrog.Summary();
 		sortie sort = new sortie(hero, balrog);
 		
 		System.out.println("You manage to climb up from the chasm and finally get to the door.");
@@ -69,6 +71,7 @@ public class Moria {
     		
     		if (hero.getStrength() > 7 || toss > 5){
     			System.out.println("OH NO!!! You've been knocked down to the bottom of the chasm by the balrog's whip!\nFight for your life!");
+    			
     			balrogSortie();
     		}
     		
@@ -123,7 +126,7 @@ public class Moria {
     			orc();	  		    		
     	} // end investigate 
 		
-    	hero.Summary();		
+    	objDungeon.heroSummary();		
 	} // end moria
 
 	public static void main(String[] args) throws IOException {
