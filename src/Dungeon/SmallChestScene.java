@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Scene02 {//Non fighting Scene 
+public class SmallChestScene {//Non fighting Scene 
 
 	Hero hero;
 	
-	public Scene02(int monsterHit, int monsterStr) throws IOException{
+	public SmallChestScene(int monsterHit, int monsterStr) throws IOException{
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("\n\n\n\nYou go deeper into the mine.\n");
 		System.out.println("You find a small chest.");
@@ -73,12 +73,13 @@ public class Scene02 {//Non fighting Scene
 				System.out.println("You find a yucky green magic potion.");
 				System.out.println("Do you drink the potion? (y or n)");
 				
-				//String ansSubThree = scanner.nextLine();
+				
 				String ansSubThree = input.readLine();
 				if (ansSubThree.equals("y") || ansSubThree.equals("Y"))
 				{
-					System.out.println("\nYou feel ill.\n\n");
+					System.out.println("\nYou feel ill.(-1 total strength)\n\n");
 					hero.setMaxStrength(hero.getMaxStrength()-1);
+					hero.setStrength(hero.getMaxStrength());
 				}
 			}
 		    if ( rand == 5 || rand == 6) 
@@ -100,6 +101,6 @@ public class Scene02 {//Non fighting Scene
 	}
 	
 	public static void main(String args[]) throws IOException{
-		Scene02 sc = new Scene02(5, 5);
+		SmallChestScene sc = new SmallChestScene(5, 5);
 	}
 }

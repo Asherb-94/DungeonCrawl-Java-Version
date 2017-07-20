@@ -18,7 +18,7 @@ public class RIP {
 		for(int i = 0; (i < length && i < name.length()); i++){
 			sb.append(name.charAt(i));
 		}
-		for(int i = 0; i < ((length - name.length())/2); i++){
+		for(int i = 0; i < ((length - name.length()+1)/2); i++){
 			sb.append(" ");
 		}
 		
@@ -34,7 +34,7 @@ public class RIP {
 		System.out.println("       |                  ||                ");
 		System.out.println("       |    R. I. P.      ||               ");
 		System.out.println("       |                  ||                ");
-		System.out.println("  *    |" + sb.toString() +"||               ");
+		System.out.println("  *    |" + sb.toString()  +"||               ");
 		System.out.println("       |                  ||                 ");
 		System.out.println("       |                  ||    *            ");
 		System.out.println("       |                  ||                 ");

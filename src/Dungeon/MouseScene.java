@@ -6,17 +6,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 //
-public class Scene03 {
+public class MouseScene {
 	//TODO global hero object
 	static Hero hero;
+	DungeonCrawl objDungeon = new DungeonCrawl();
 
-	public Scene03(int monsterHit, int monsterStr) throws IOException{//Fighting Scene 
+	public MouseScene(int monsterHit, int monsterStr) throws IOException{//Fighting Scene 
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");
 
 		Monster monster = new Monster("Mouse", monsterHit, monsterStr, 0);
+		objDungeon.heroSummary();
 		monster.Summary();
+		
+		
 
 		sortie sortie = new sortie(hero, monster);//Call to sortie
 		

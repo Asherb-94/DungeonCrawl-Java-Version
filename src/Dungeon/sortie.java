@@ -23,10 +23,11 @@ public class sortie
         int monsterThrow = random.nextInt(monster.getStrength());
         int heroThrow;
         int bothAlive = 1;
-        int runAway = 1;
+        int runAway = 0;
         int hit = 0;
+        int runAwayMonster = 0;
 
-        while (bothAlive == 1 && runAway == 1)
+        while (bothAlive == 1 && runAway == 0 && runAwayMonster == 0)
         {
         	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
         	 
@@ -92,7 +93,7 @@ public class sortie
                     else 
                     {
                     	System.out.print("\tIt misses.\n");
-                    	 runAway = 0; 
+                    	 runAway = 1; 
                     }   
                 }
                 else
@@ -134,21 +135,34 @@ public class sortie
             //The monster hears its mommy calling
             if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1)
             {
-                runAway = 0;
+            	runAwayMonster = 1;
                 System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
             }
             //end while
         }
-        runAway = 1;//to turn on runAway 
+        //runAway = 1;//to turn on runAway 
         //Final Result of the Sortie
         
-        if (runAway == 1 && hero.getHitPoints() > 0) 
+        if (runAway == 0 && hero.getHitPoints() > 0) 
         {
-            System.out.print("\n\n\tYou gain strength from your experience\n");
-            hero.setStrength(hero.getStrength()+2);
-            hero.setMaxStrength(hero.getMaxStrength()+2);
+            System.out.print("\n\n\tYou gain strength and health from your experience\n");
+            hero.setMaxHitPoints(hero.getMaxHitPoints()+1);
+            hero.setHitPoints(hero.getHitPoints()+1);
+            
+            hero.setMaxStrength(hero.getMaxStrength()+1);
+            hero.setStrength(hero.getStrength()+1);
+           
             obj.heroSummary();
             System.out.print("\n");
         }
+        
+        if (runAway == 1) 
+        {
+            System.out.print("\n\n\tYou run away from the battle....coward\n");
+           
+            obj.heroSummary();
+            System.out.print("\n");
+        }
+        
     }
 }

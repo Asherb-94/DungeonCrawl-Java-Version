@@ -4,12 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Revenge {
-	Hero hero = new Hero("me", 5, 5, 5);
+public class WizardRevengeScene {//Revenge
+	Hero hero;
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
+	DungeonCrawl objDungeon = new DungeonCrawl();
 	
 	private void fight() throws IOException{
 		Monster wizBro = new Monster("Old Wizard", 7, 6, 0);
+		wizBro.Summary();
 		sortie srt = new sortie(hero, wizBro);
 		System.out.println("You stand over the old wizard's body. He looks peaceful next to his brother.");
 		System.out.println("Do you bury them? (y or n)");
@@ -22,7 +24,7 @@ public class Revenge {
     	}
 	}
 	
-	public Revenge() throws IOException{
+	public WizardRevengeScene() throws IOException{
 		System.out.println("You enter a room that is pitch black except for pure white sunlight coming from a hole in the ceiling.");
 		System.out.println("As your eyes adjust to the light, you realize that the light is illuminating a coffin.\n");
 		System.out.println("And a man kneeling beside it. You cannot see his face.");
@@ -67,13 +69,13 @@ public class Revenge {
     		fight();
     	}
 		
-    	hero.Summary();
+    	objDungeon.heroSummary();;
 		
 	} // end main scene
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Revenge rev = new Revenge();
+		WizardRevengeScene rev = new WizardRevengeScene();
 	}
 
 }

@@ -6,14 +6,14 @@ import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Scene05 {
+public class WizardScene {
 	//TODO make global hero or pass it as parameter
 	DungeonCrawl obj = new DungeonCrawl();
 	Hero hero;
     //char[] buffer = new char[132];
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	
-	public Scene05() throws IOException{
+	public WizardScene() throws IOException{
 		System.out.println("You enter a room full of sparkling purple crystals.\nThey glint in the light of your torch.");
 		System.out.println("Sitting in a geode in the middle of the cavernous room is a strange looking figure... \n\nA wizard.");
 		System.out.println("\n**********");
@@ -30,7 +30,8 @@ public class Scene05 {
 		//Scanner scan = new Scanner(System.in);
         String answer = input.readLine();
 	    Random random = new Random();
-	    int toss = random.nextInt(2);
+	    //int toss = random.nextInt(2);
+	    int toss = 0;//TEST
 	    
         if ( answer.equals("a")|| answer.equals("A")){
     		System.out.println("You uncork the potion. Immediately, you get a whiff of blood.");
@@ -44,7 +45,8 @@ public class Scene05 {
     	    	System.out.println("It is hard to swallow, but you manage to finish the bottle.");
     	    	System.out.println("You feel a surge of energy within yourself.");
     	    	System.out.println("Your body is filled with the strength of your enemies. You gain 4 strength.");
-    	    	hero.setStrength(hero.getStrength()+4);
+    	    	hero.setMaxStrength(hero.getMaxStrength()+3);
+    	    	hero.setStrength(hero.getMaxStrength());
     	    }
     	    
     	    else {
@@ -70,8 +72,6 @@ public class Scene05 {
         	System.out.println("\tYou have done well. Now you must choose one final time.");
         	System.out.println("\tTake the gold I have in my hand and leave or fight me for incredible power. (a or b)");
         	
-    		//answer = scan.next(".").charAt(0);
-    	    //buffer[0] = answer;
         	String answerTwo = input.readLine();
     	    
     	    if (answerTwo.equals("a")|| answerTwo.equals("A")){
@@ -82,22 +82,29 @@ public class Scene05 {
     	    		hero.setHitPoints(1);
     	    	}
     	    	else {
-    	    		System.out.println("You pocket the gold and leave the cave the way you came, grateful to come out unscathed.");
-    	    		hero.setGold(100);
+
+    	    		System.out.println("You pocket the gold and leave the cave the way you came, greateful to come out unscathed.");
+    	    		hero.setGold(hero.getGold()+100);
+
     	    	}
     	    }
     	    else {
     	    	Monster wizard = new Monster("Wizard", 10, 10, 100);
+    	    	wizard.Summary();
     	    	sortie srt = new sortie(hero, wizard);
+    	    	if (wizard.getHitPoints() <=0)
+    	    	{
+    	    		hero.setGold(hero.getGold()+100);
+        	    	hero.setKey(hero.getKey()+1);
+    	    	}
+    	    	
     	    }
         }
-        
-        obj.heroSummary();
-		
+        //obj.heroSummary();
 		
 	}
 	
 	public static void main(String args[]) throws IOException{
-		Scene05 sc = new Scene05();
+		WizardScene sc = new WizardScene();
 	}
 }

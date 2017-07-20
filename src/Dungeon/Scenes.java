@@ -3,54 +3,53 @@ package Dungeon;
 import java.io.IOException;
 
 public abstract class Scenes {
-
+	Hero hero;
 	static void scene00( ) {
 		Scene00 objScene00 = new Scene00();
-		
+	}
+	
+	static void BatScene( int monsterHit, int monsterStr ) throws IOException {
+		BatScene objScene01 = new BatScene(monsterHit,monsterStr);	
+	}
+	
+	static void SmallChestScene( int monsterHit, int monsterStr ) throws IOException {
+		SmallChestScene objScene02 = new SmallChestScene(monsterHit,monsterStr);	
+	}
+	
+	static void MouseScene( int monsterHit, int monsterStr ) throws IOException {
+		MouseScene objScene03 = new MouseScene(monsterHit,monsterStr);
+	}
+	
+	static void PumpkinScene( int monsterHit, int monsterStr ) throws IOException {
+		PumpkinScene objScene04 = new PumpkinScene(monsterHit,monsterStr);
+	}
+	
+	static void WizardScene( int monsterHit, int monsterStr ) throws IOException {
+		WizardScene objScene05 = new WizardScene();	
+	}
+	
+	static void Shrek( int monsterHit, int monsterStr ) throws IOException {
+		Shrek objShrek = new Shrek(monsterHit,monsterStr);
+	}
+	
+	
+	static void BoulderScene( int monsterHit, int monsterStr ) throws IOException {
+		BoulderScene objScene07 = new BoulderScene(monsterHit,monsterStr);
+	}
+	
+	static void OldManScene( int monsterHit, int monsterStr ) throws IOException {
+		OldManScene objScene08 = new OldManScene( monsterHit,  monsterStr);
 		
 	}
-	static void scene01( int monsterHit, int monsterStr ) throws IOException {
-		scene01 objScene01 = new scene01(monsterHit,monsterStr);
-		
-		
-	}
-	static void scene02( int monsterHit, int monsterStr ) throws IOException {
-		Scene02 objScene02 = new Scene02(monsterHit,monsterStr);
-		
-	}
-	static void scene03( int monsterHit, int monsterStr ) throws IOException {
-		Scene03 objScene03 = new Scene03(monsterHit,monsterStr);
-		
-	}
-	static void scene04( int monsterHit, int monsterStr ) throws IOException {
-		Scene04 objScene04 = new Scene04(monsterHit,monsterStr);
-		
-	}
-	static void scene05( int monsterHit, int monsterStr ) throws IOException {
 
-		Scene05 objScene05 = new Scene05();
-		
-	}
+		static void WizardRevengeScene( int monsterHit, int monsterStr ) throws IOException {
+			if (Hero.getKey() >=1){
+				WizardRevengeScene objScene09 = new WizardRevengeScene();
+			}
+		}
 	
-	
-	static void scene07( int monsterHit, int monsterStr ) throws IOException {
-		Scene07 objScene07 = new Scene07(monsterHit,monsterStr);
-		
-	}
-	static void scene06( int monsterHit, int monsterStr ) throws IOException {
-		Scene06 objScene06 = new Scene06(monsterHit,monsterStr);
-		
-	}
-	
-	
-	static void scene08( int monsterHit, int monsterStr ) throws IOException {
-		Scene08 objScene08 = new Scene08( monsterHit,  monsterStr);
-		
-	}
 
 	static void potionScene() {
-		
-		
 	}
 
 }

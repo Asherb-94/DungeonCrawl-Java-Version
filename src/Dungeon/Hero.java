@@ -8,8 +8,9 @@ public class Hero {
 	  private static int gold;
 	  private static int intelligence;
 	  private static String name;
+	  private static int key;
 	  
-	  public Hero(String name, int hitPoints, int strength, int gold){
+	  public Hero(String name, int hitPoints, int strength, int gold, int key){
 		  this.name = name;
 		  this.hitPoints = hitPoints;
 		  this.maxHitPoints = hitPoints;
@@ -17,13 +18,15 @@ public class Hero {
 		  this.maxStrength = strength;
 		  this.gold = gold;
 		  this.intelligence = 0;
+		  this.key = 0;
+		  
 	  }
 	  
 
 	public void Summary(){
 		  System.out.println("Hero " + name +": " + Hero.hitPoints + "/" 
 				  + this.maxHitPoints + "HP; " + this.strength + "/" + this.maxStrength 
-				  + " ST; " + this.gold + " Gold");
+				  + " ST; " + this.gold + " Gold " + "Key(s): "+ Hero.getKey());
 	  }
 
 	public static int getHitPoints() {
@@ -83,7 +86,15 @@ public class Hero {
 	}
 	
 	public static void setIntelligence(int intel){
-		intelligence = intel;
+		Hero.intelligence = intel;
+	}
+	
+	public static int getKey(){
+		return key;
+	}
+	
+	public static void setKey(int key){
+		Hero.key = key;
 	}
 	  
 }

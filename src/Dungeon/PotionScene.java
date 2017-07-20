@@ -36,10 +36,12 @@ public class PotionScene {
 		}
 		
 		toss = random.nextInt(3);
-		System.out.println("You find a ");
+		System.out.println();
+		System.out.println();
+		System.out.println("As you make your way through the dungeon very injured, you find a ");
 		String color = "";
 		if (toss == 0)
-			color = "puce ";
+			color = "blue ";
 		
 		else if (toss == 1)
 			color = "green ";
