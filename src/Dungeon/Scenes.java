@@ -52,6 +52,11 @@ public abstract class Scenes {
 			GoldElfScene objGoldElf = new GoldElfScene( monsterHit,  monsterStr);
 			
 		}
+		
+		static void TravelScene()
+		{
+			System.out.println("As you continue to travel into the dungeon...");
+		}
 	
 
 	static void potionScene() {

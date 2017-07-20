@@ -1,6 +1,7 @@
 package Dungeon;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class DungeonCrawl extends Scenes{
     static Hero hero; //The hero object    -- constantly updated by the game
@@ -43,7 +44,7 @@ public class DungeonCrawl extends Scenes{
 	{
      //Final Monster Health and Strength 
 	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */
-	  else if ( scene== 1 ){  BatScene(  2, 2 );  BatScene(  3, 3 );}// Bat 2 2 & Bat 3 3  
+	  else if ( scene== 1 ){  BatScene(  2, 2 ); TravelScene(); BatScene(  3, 3 );}// Bat 2 2 & Bat 3 3  
 	  else if ( scene== 2 ) PumpkinScene(0,0);//Bat 3 3
 	  else if ( scene== 3 ) SmallChestScene(  0, 0 );// chest 
 	  else if ( scene== 4 ) MouseScene(  4, 4 );// Mouse 
@@ -57,14 +58,28 @@ public class DungeonCrawl extends Scenes{
 	  {
 	    System.out.print(" More to come! ");
 	  }
-	  
-}
+	   
+  
+   }
+	
+	  public static void printWithDelays(String data, TimeUnit unit, long delay) throws InterruptedException {
+		    
+		  for (char ch:data.toCharArray()) 
+		    {
+		        System.out.print(ch);
+		        unit.sleep(delay);
+		    }
+	  }
 
 
 
 
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
+		
+		
+		 //printWithDelays("HELLO", TimeUnit.MILLISECONDS, 100);
+		
 	    int sceneCount = 0;
 		Scanner scan = new Scanner(System.in);
 		int scene = 0; //starts at the first scene 
@@ -88,7 +103,10 @@ public class DungeonCrawl extends Scenes{
 			pauseProg();	
 			
 			//go to the current scene
-			System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
+			//System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
+			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 100);
+			System.out.print(sceneCount++);
+			printWithDelays(" *****",TimeUnit.MILLISECONDS, 100);
 			sceneSelect(  scene ); 
 			scene++;//goes to the next scene 
 			

@@ -89,7 +89,7 @@ public class WizardScene {
     	    	}
     	    }
     	    else {
-    	    	Monster wizard = new Monster("Wizard", 10, 10, 100);
+    	    	Monster wizard = new Monster("Wizard", 10, 8, 100);
     	    	wizard.Summary();
     	    	sortie srt = new sortie(hero, wizard);
     	    	if (wizard.getHitPoints() <=0)
