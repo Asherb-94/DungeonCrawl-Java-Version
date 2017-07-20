@@ -5,8 +5,9 @@ import java.io.InputStreamReader;
 
 
 public class Scene04 {
-	//TODO global hero object
-	Hero hero;
+	  //TODO global hero object
+    static DungeonCrawl objDungeon = new DungeonCrawl();
+	static Hero hero;
 	int monsterHit;
 	int monsterStr;
 	
@@ -51,10 +52,10 @@ public class Scene04 {
 		}
 	}
 	
-	private void rightChoice(){
+	private static void rightChoice(){
 		System.out.println("You find 10 gold pieces.");
 		hero.setGold(hero.getGold()+10);
-		hero.Summary();
+		objDungeon.heroSummary();
 	}
 	
 	public static void main(String[] args) throws IOException{

@@ -50,7 +50,8 @@ public class DungeonCrawl extends Scenes{
 	  else if ( scene== 5 ) scene05(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
 	  else if ( scene== 6 ) scene07(  0, 0 ); // BoulderScene, makes monster in class 
 	  else if ( scene== 7 ) scene06(  5, 5 ); // Shrek  (fight)
-	  else if ( scene== 8 ) scene08(  7, 10 );// Old Man (fight) **Should match loop down below the last scene**  
+	  else if ( scene== 8 ) scene08(  7, 10 );// Old Man (fight) 
+	  else if ( scene== 9 ) scene09(  1, 1 );// Revenge (fight) only exception to rule because of mult monsters in class  **Should match loop down below the last scene** 
 
 	  else
 	  {
@@ -78,7 +79,7 @@ public class DungeonCrawl extends Scenes{
 		heroSummary();
 		//only runs once ^
 		//loops after that below (down arrow)
-		while (hero.getHitPoints() > 0 && scene <= 8)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED
+		while (hero.getHitPoints() > 0 && scene <= 9)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED
 		{
 			
 			pauseProg();	
