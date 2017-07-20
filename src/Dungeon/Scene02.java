@@ -72,12 +72,13 @@ public class Scene02 {//Non fighting Scene
 				System.out.println("You find a yucky green magic potion.");
 				System.out.println("Do you drink the potion? (y or n)");
 				
-				//String ansSubThree = scanner.nextLine();
+				
 				String ansSubThree = input.readLine();
 				if (ansSubThree.equals("y") || ansSubThree.equals("Y"))
 				{
-					System.out.println("\nYou feel ill.\n\n");
+					System.out.println("\nYou feel ill.(-1 total strength)\n\n");
 					hero.setMaxStrength(hero.getMaxStrength()-1);
+					hero.setStrength(hero.getMaxStrength());
 				}
 			}
 		    if ( rand == 5 || rand == 6) 

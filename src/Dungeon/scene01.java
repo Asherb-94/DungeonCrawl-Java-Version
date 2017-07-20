@@ -7,12 +7,13 @@ import java.util.Scanner;
 public class scene01 {
 	//TODO need external hero
 	 static Hero hero;
-
+	 DungeonCrawl objDungeon = new DungeonCrawl();
 	
 	public scene01(int monsterHit, int monsterStr) throws IOException{
 		System.out.println("What is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
+		objDungeon.heroSummary();
 		monster.Summary();
 		
 		sortie srt = new sortie(hero, monster);//call to sortie 

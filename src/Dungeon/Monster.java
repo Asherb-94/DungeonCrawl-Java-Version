@@ -19,9 +19,9 @@ public class Monster {
 	  }
 	  
 	  public void Summary(){
-		  System.out.println("Monster " + ": " + this.hitPoints + "/" 
+		  System.out.println(getName() + ": " + this.hitPoints + "/" 
 				  + this.maxHitPoints + "HP; " + this.strength + "/" + this.maxStrength 
-				  + " ST; " + this.gold + " Gold");
+				  + " ST; " + this.gold + " Gold");//"Monster " + 
 	  }
 
 	public static int getHitPoints() {

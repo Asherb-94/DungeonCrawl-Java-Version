@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Scene03 {
 	//TODO global hero object
 	static Hero hero;
+	DungeonCrawl objDungeon = new DungeonCrawl();
 
 	public Scene03(int monsterHit, int monsterStr) throws IOException{//Fighting Scene 
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
@@ -16,7 +17,10 @@ public class Scene03 {
 		System.out.println("A mouse!");
 
 		Monster monster = new Monster("Mouse", monsterHit, monsterStr, 0);
+		objDungeon.heroSummary();
 		monster.Summary();
+		
+		
 
 		sortie sortie = new sortie(hero, monster);//Call to sortie
 		
