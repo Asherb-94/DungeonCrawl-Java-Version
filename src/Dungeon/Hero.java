@@ -6,6 +6,7 @@ public class Hero {
 	  private static int maxStrength;
 	  private static int potions;
 	  private static int gold;
+	  private static int intelligence;
 	  private static String name;
 	  
 	  public Hero(String name, int hitPoints, int strength, int gold){
@@ -15,6 +16,7 @@ public class Hero {
 		  this.strength = strength;
 		  this.maxStrength = strength;
 		  this.gold = gold;
+		  this.intelligence = 0;
 	  }
 	  
 
@@ -36,8 +38,8 @@ public class Hero {
 		return maxHitPoints;
 	}
 
-	public void setMaxHitPoints(int maxHitPoints) {
-		this.maxHitPoints = maxHitPoints;
+	public static void setMaxHitPoints(int maxHitPoints) {
+		Hero.maxHitPoints = maxHitPoints;
 	}
 
 	public static int getStrength() {
@@ -74,6 +76,14 @@ public class Hero {
 	
 	public static String getName(){
 		return name;
+	}
+	
+	public static int getIntelligence(){
+		return intelligence;
+	}
+	
+	public static void setIntelligence(int intel){
+		intelligence = intel;
 	}
 	  
 }

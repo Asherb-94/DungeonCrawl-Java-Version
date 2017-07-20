@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-public class BoulderScene {
+public class Scene07 {
 	//TODO global hero object
-		Hero hero;
+		static Hero hero;
 		
 		// start //
-		public BoulderScene() throws IOException{
+		public Scene07(int monsterHit, int monsterStr) throws IOException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			System.out.println("You continue deeper into the mine.");
 			System.out.println("You come up to a very large boulder.");
@@ -52,7 +52,7 @@ public class BoulderScene {
 			}
 		}
 		
-		private void goAround(){
+		private static void goAround(){
 			System.out.println("You try to squeeze through a small gap inbetween the boulder and the cave wall.");
 			Random random = new Random();
 		    int toss = random.nextInt(2);
@@ -66,7 +66,8 @@ public class BoulderScene {
 		}
 		
 		public static void main(String[] args) throws IOException{
-			BoulderScene sc = new BoulderScene();
+			Scene07 sc = new Scene07(0,0);
+			//goAround();
 		}
 	
 }

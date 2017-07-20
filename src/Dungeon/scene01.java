@@ -51,6 +51,6 @@ public class scene01 {
 	}
 	
 	public static void main(String args[]) throws IOException{
-		scene01 sc = new scene01(3, 5);
+		scene01 sc = new scene01(0, 0);
 	}
 }

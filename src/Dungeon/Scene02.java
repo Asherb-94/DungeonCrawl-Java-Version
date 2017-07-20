@@ -22,10 +22,10 @@ public class Scene02 {//Non fighting Scene
 		{
 
 
-			 /*Random randSub = new Random();
-			 int  rand = randSub.nextInt(3)+3;//change to 6 and +0
-*/			
-			int rand = 3;
+			 Random randSub = new Random();
+			 int  rand = randSub.nextInt(6);//change to 6 and +0
+			
+			//int rand = 3;
 			if (rand == 0)
 			{
 				System.out.println("You open the box. A burst of poison gas hits you. You die.\n");
