@@ -104,9 +104,10 @@ public class DungeonCrawl extends Scenes{
 			
 			//go to the current scene
 			//System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
-			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 100);
+			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 150);
 			System.out.print(sceneCount++);
-			printWithDelays(" *****",TimeUnit.MILLISECONDS, 100);
+			printWithDelays(" *****",TimeUnit.MILLISECONDS, 150);
+			System.out.println();
 			sceneSelect(  scene ); 
 			scene++;//goes to the next scene 
 			
@@ -127,7 +128,7 @@ public class DungeonCrawl extends Scenes{
 			    objRIP.display();
 			  }
 			  
-			  if(scene == 9 && hero.getHitPoints()>=1)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED 
+			  if(scene == 10 && hero.getHitPoints()>=1)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED 
 			  {
 				int finalGold = 0;
 			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");
