@@ -140,7 +140,7 @@ public class sortie
                 System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
                 System.out.print("\n\t\tQuick! Now's your chance to chase it and kill it\n\n");
                 System.out.print("\n\nWhat do you do? [A]: Chase \t [B}: Don't Chase");
-                String answerSub1 = inputSub.readLine();
+                //String answerSub1 = inputSub.readLine();
                 
             }
             //end while
