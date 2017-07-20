@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class Scene04 {
 	//TODO global hero object
+	//Hero hero = new Hero("hero", 5, 5, 0);
 	Hero hero;
 	int monsterHit;
 	int monsterStr;
