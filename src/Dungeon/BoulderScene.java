@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class BoulderScene {
 	//TODO global hero object
-		Hero hero;
+		Hero hero = new Hero("me", 6, 7, 2);
 		
 		// start //
 		public BoulderScene() throws IOException{
