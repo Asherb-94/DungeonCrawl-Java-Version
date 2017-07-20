@@ -46,6 +46,10 @@ public abstract class Scenes {
 			if (Hero.getKey() >=1){
 				WizardRevengeScene objWizardRev = new WizardRevengeScene();
 			}
+			else
+			{
+				MouseScene objMouse = new MouseScene(monsterStr, monsterStr);
+			}
 		}
 		
 		static void GoldElfScene( int monsterHit, int monsterStr ) throws IOException {
