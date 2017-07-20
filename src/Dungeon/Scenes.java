@@ -21,11 +21,11 @@ public abstract class Scenes {
 	}
 	
 	static void PumpkinScene( int monsterHit, int monsterStr ) throws IOException {
-		PumpkinScene objScene04 = new PumpkinScene(monsterHit,monsterStr);
+		PumpkinScene objPumpkin = new PumpkinScene(monsterHit,monsterStr);
 	}
 	
 	static void WizardScene( int monsterHit, int monsterStr ) throws IOException {
-		WizardScene objScene05 = new WizardScene();	
+		WizardScene objWizard = new WizardScene();	
 	}
 	
 	static void Shrek( int monsterHit, int monsterStr ) throws IOException {
@@ -34,18 +34,23 @@ public abstract class Scenes {
 	
 	
 	static void BoulderScene( int monsterHit, int monsterStr ) throws IOException {
-		BoulderScene objScene07 = new BoulderScene(monsterHit,monsterStr);
+		BoulderScene objBoulder = new BoulderScene(monsterHit,monsterStr);
 	}
 	
 	static void OldManScene( int monsterHit, int monsterStr ) throws IOException {
-		OldManScene objScene08 = new OldManScene( monsterHit,  monsterStr);
+		OldManScene objOldMan = new OldManScene( monsterHit,  monsterStr);
 		
 	}
 
 		static void WizardRevengeScene( int monsterHit, int monsterStr ) throws IOException {
 			if (Hero.getKey() >=1){
-				WizardRevengeScene objScene09 = new WizardRevengeScene();
+				WizardRevengeScene objWizardRev = new WizardRevengeScene();
 			}
+		}
+		
+		static void GoldElfScene( int monsterHit, int monsterStr ) throws IOException {
+			GoldElfScene objGoldElf = new GoldElfScene( monsterHit,  monsterStr);
+			
 		}
 	
 

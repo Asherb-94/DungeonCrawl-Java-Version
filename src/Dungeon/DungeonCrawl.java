@@ -43,10 +43,10 @@ public class DungeonCrawl extends Scenes{
 	{
      //Final Monster Health and Strength 
 	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */
-	  else if ( scene== 1 ) BatScene(  2, 2 );// Bat 2 2
-	  else if ( scene== 2 ) SmallChestScene(  0, 0 );// Non fighting scene 
-	  else if ( scene== 3 ) MouseScene(  3, 3 );// Mouse 
-	  else if ( scene== 4 ) PumpkinScene(  4, 4 );// Pumpkin 
+	  else if ( scene== 1 ){  BatScene(  2, 2 );  BatScene(  3, 3 );}// Bat 2 2 & Bat 3 3  
+	  else if ( scene== 2 ) PumpkinScene(0,0);//Bat 3 3
+	  else if ( scene== 3 ) SmallChestScene(  0, 0 );// chest 
+	  else if ( scene== 4 ) MouseScene(  4, 4 );// Mouse 
 	  else if ( scene== 5 ) WizardScene(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
 	  else if ( scene== 6 ) BoulderScene(  0, 0 ); // BoulderScene, makes monster in class 
 	  else if ( scene== 7 ) Shrek  ( 5  ,  5); // Shrek  (fight)

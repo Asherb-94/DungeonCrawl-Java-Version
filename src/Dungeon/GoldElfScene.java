@@ -3,12 +3,12 @@ package Dungeon;
 
 import java.io.IOException;
 
-public class GoldenHumanScene {
+public class GoldElfScene {
 		Hero hero;
 		int monsterHit;
 		int monsterStr;
 	
-		public GoldenHumanScene(int monsterHit, int monsterStr) throws IOException{
+		public GoldElfScene(int monsterHit, int monsterStr) throws IOException{
 			System.out.println("You walk into what looks like an empty dungeon. "
 					+ "\nThere is a chest in the far corner of the room."
 					+ "\nYou suddenly feel like something is watching you and become very tense."

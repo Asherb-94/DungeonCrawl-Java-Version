@@ -25,11 +25,11 @@ public class SmallChestScene {//Non fighting Scene
 			 Random randSub = new Random();
 			 int  rand = randSub.nextInt(6);//change to 6 and +0
 			
-			//int rand = 3;
+			
 			if (rand == 0)
 			{
-				System.out.println("You open the box. A burst of poison gas hits you. You die.\n");
-				hero.setHitPoints(0);
+				System.out.println("You open the box. A burst of poison gas hits you.\n");
+				hero.setHitPoints(hero.getHitPoints()-2);
 			}
 		    if (rand == 1)
 			{
