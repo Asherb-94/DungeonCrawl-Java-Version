@@ -4,14 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Scene08 {
+public class OldManScene {
 	//TODO global hero object
 		Hero hero;
 		int monsterHit;
 		int monsterStr;
 		
 		// start //
-		public Scene08(int monsterHit, int monsterStr) throws IOException{
+		public OldManScene(int monsterHit, int monsterStr) throws IOException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			this.monsterHit = monsterHit;
 			this.monsterStr = monsterStr;
@@ -50,6 +50,6 @@ public class Scene08 {
 		
 		
 		public static void main(String[] args) throws IOException{
-			Scene08 sc = new Scene08(5, 4);
+			OldManScene sc = new OldManScene(5, 4);
 		}
 }

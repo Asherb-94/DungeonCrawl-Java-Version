@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Scene02 {//Non fighting Scene 
+public class SmallChestScene {//Non fighting Scene 
 
 	Hero hero;
 	
-	public Scene02(int monsterHit, int monsterStr) throws IOException{
+	public SmallChestScene(int monsterHit, int monsterStr) throws IOException{
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("\n\n\n\nYou go deeper into the mine.\n");
 		System.out.println("You find a small chest.");
@@ -101,6 +101,6 @@ public class Scene02 {//Non fighting Scene
 	}
 	
 	public static void main(String args[]) throws IOException{
-		Scene02 sc = new Scene02(5, 5);
+		SmallChestScene sc = new SmallChestScene(5, 5);
 	}
 }

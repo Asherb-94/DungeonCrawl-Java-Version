@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class scene01 {
+public class BatScene {
 	//TODO need external hero
 	 static Hero hero;
 	 DungeonCrawl objDungeon = new DungeonCrawl();
 	
-	public scene01(int monsterHit, int monsterStr) throws IOException{
+	public BatScene(int monsterHit, int monsterStr) throws IOException{
 		System.out.println("What is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
@@ -52,6 +52,6 @@ public class scene01 {
 	}
 	
 	public static void main(String args[]) throws IOException{
-		scene01 sc = new scene01(0, 0);
+		BatScene sc = new BatScene(0, 0);
 	}
 }
