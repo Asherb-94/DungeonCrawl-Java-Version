@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 
 
 public class Scene04 {
-	//TODO global hero object
-	//Hero hero = new Hero("hero", 5, 5, 0);
-	Hero hero;
+	  //TODO global hero object
+    static DungeonCrawl objDungeon = new DungeonCrawl();
+	static Hero hero;
 	int monsterHit;
 	int monsterStr;
 	
@@ -47,14 +47,15 @@ public class Scene04 {
 		else {
 			System.out.println("\nOh no! You have angered the Great Pumpkin!!\n");
 			Monster monster = new Monster("Great Pumpkin", monsterHit, monsterStr, 0);
+			monster.Summary();
 			sortie sortie = new sortie(hero, monster);
 		}
 	}
 	
-	private void rightChoice(){
+	private static void rightChoice(){
 		System.out.println("You find 10 gold pieces.");
 		hero.setGold(hero.getGold()+10);
-		hero.Summary();
+		objDungeon.heroSummary();
 	}
 	
 	public static void main(String[] args) throws IOException{
