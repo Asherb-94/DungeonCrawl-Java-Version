@@ -2,7 +2,8 @@ package Dungeon;
 
 import java.io.IOException;
 
-public abstract class Scenes {
+public  abstract class Scenes {
+	Hero hero;
 
 	static void scene00( ) {
 		Scene00 objScene00 = new Scene00();
@@ -47,10 +48,16 @@ public abstract class Scenes {
 		Scene08 objScene08 = new Scene08( monsterHit,  monsterStr);
 		
 	}
-	static void scene09( int monsterHit, int monsterStr ) throws IOException {
-		Scene09 objScene09 = new Scene09();
-		
-	}
+
+		static void scene09( int monsterHit, int monsterStr ) throws IOException {
+			if (Hero.getKey() >=1){
+				Scene09 objScene09 = new Scene09();
+			}
+			
+			
+		}
+	
+	
 
 	static void potionScene() {
 		

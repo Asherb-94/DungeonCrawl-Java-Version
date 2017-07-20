@@ -93,11 +93,10 @@ public class Scene05 {
     	    	wizard.Summary();
     	    	sortie srt = new sortie(hero, wizard);
     	    	hero.setGold(hero.getGold()+100);
+    	    	hero.setKey(hero.getKey()+1);
     	    }
         }
-        
         //obj.heroSummary();
-		
 		
 	}
 	

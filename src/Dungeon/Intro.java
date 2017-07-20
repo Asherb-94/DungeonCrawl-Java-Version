@@ -41,7 +41,7 @@ public class Intro {
 	    	{
 	    		
 		    	System.out.println("  Enter your name, Hero: ");
-		    	Hero objHero = new Hero(objName.next(),4,4,0);
+		    	Hero objHero = new Hero(objName.next(),4,4,0,0);
 		    	
 		    	if (objHero.getName().isEmpty())
 		    	{

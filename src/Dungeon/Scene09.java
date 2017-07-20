@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Scene09 {//Revenge
 	Hero hero;
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
+	DungeonCrawl objDungeon = new DungeonCrawl();
 	
 	private void fight() throws IOException{
 		Monster wizBro = new Monster("Old Wizard", 7, 6, 0);
@@ -68,7 +69,7 @@ public class Scene09 {//Revenge
     		fight();
     	}
 		
-    	hero.Summary();
+    	objDungeon.heroSummary();;
 		
 	} // end main scene
 

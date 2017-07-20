@@ -25,8 +25,9 @@ public class sortie
         int bothAlive = 1;
         int runAway = 0;
         int hit = 0;
+        int runAwayMonster = 0;
 
-        while (bothAlive == 1 && runAway == 0)
+        while (bothAlive == 1 && runAway == 0 && runAwayMonster == 0)
         {
         	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
         	 
@@ -134,7 +135,7 @@ public class sortie
             //The monster hears its mommy calling
             if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1)
             {
-                runAway = 1;
+            	runAwayMonster = 1;
                 System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
             }
             //end while
@@ -162,5 +163,6 @@ public class sortie
             obj.heroSummary();
             System.out.print("\n");
         }
+        
     }
 }
