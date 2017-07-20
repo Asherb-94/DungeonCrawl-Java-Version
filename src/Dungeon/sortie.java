@@ -41,7 +41,7 @@ public class sortie
                 System.out.print("\n\n\tYou attack the " + monster.getName()+"\n\n");
                 
                
-                heroThrow = random.nextInt(hero.getStrength());
+                heroThrow = random.nextInt(hero.getStrength()+1);//no +1
                 
                 if (heroThrow == monsterThrow)
                 {
@@ -60,7 +60,7 @@ public class sortie
                     System.out.print("\tThe " + monster.getName() + " looses a hit point.\n\n");
                     monster.setHitPoints(monster.getHitPoints()-1);
                 }
-                else if (heroThrow < monsterThrow - 2)
+                else if (heroThrow < monsterThrow - 1)//2
                 {
                     System.out.print("\tOUCH OUCH OUCH!! The " + monster.getName() + " hits you.\n");
                     System.out.print("\tYou loose two hit point.\n\n");

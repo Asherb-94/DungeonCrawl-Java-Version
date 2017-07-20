@@ -45,7 +45,7 @@ public class DungeonCrawl extends Scenes{
      //Final Monster Health and Strength 
 	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */
 	  else if ( scene== 1 )  BatScene(  2, 2 ); // Bat 2 2
-	  else if ( scene== 2 ) PumpkinScene(0,0);//Bat 3 3
+	  else if ( scene== 2 ) PumpkinScene(4,4);//Bat 3 3
 	  else if ( scene== 3 ) SmallChestScene(  0, 0 );// chest 
 	  else if ( scene== 4 ) MouseScene(  4, 4 );// Mouse 
 	  else if ( scene== 5 ) WizardScene(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
@@ -105,9 +105,9 @@ public class DungeonCrawl extends Scenes{
 			
 			//go to the current scene
 			//System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
-			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 150);
+			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 75);
 			System.out.print(sceneCount++);
-			printWithDelays(" *****",TimeUnit.MILLISECONDS, 150);
+			printWithDelays(" *****",TimeUnit.MILLISECONDS, 75);
 			System.out.println();
 			sceneSelect(  scene ); 
 			scene++;//goes to the next scene 
