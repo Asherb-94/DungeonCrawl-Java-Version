@@ -44,7 +44,7 @@ public class DungeonCrawl extends Scenes{
 	{
      //Final Monster Health and Strength 
 	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */
-	  else if ( scene== 1 ){  BatScene(  2, 2 ); TravelScene(); BatScene(  3, 3 );}// Bat 2 2 & Bat 3 3  
+	  else if ( scene== 1 )  BatScene(  2, 2 ); // Bat 2 2
 	  else if ( scene== 2 ) PumpkinScene(0,0);//Bat 3 3
 	  else if ( scene== 3 ) SmallChestScene(  0, 0 );// chest 
 	  else if ( scene== 4 ) MouseScene(  4, 4 );// Mouse 
@@ -52,7 +52,8 @@ public class DungeonCrawl extends Scenes{
 	  else if ( scene== 6 ) BoulderScene(  0, 0 ); // BoulderScene, makes monster in class 
 	  else if ( scene== 7 ) Shrek  ( 5  ,  5); // Shrek  (fight)
 	  else if ( scene== 8 ) OldManScene(  7, 10 );// Old Man (fight) 
-	  else if ( scene== 9 ) WizardRevengeScene(  1, 1 );// Revenge (fight) only exception to rule because of mult monsters in class  **Should match loop down below the last scene** 
+	  else if ( scene== 9 ) WizardRevengeScene(  1, 1 );// Revenge (fight) only exception to rule because of mult monsters in class  **Should match loop down below the last scene**
+	  else if ( scene== 10 ) Moria( );
 
 	  else
 	  {
@@ -128,7 +129,7 @@ public class DungeonCrawl extends Scenes{
 			    objRIP.display();
 			  }
 			  
-			  if(scene == 10 && hero.getHitPoints()>=1)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED 
+			  if(scene == 11 && hero.getHitPoints()>=1)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED 
 			  {
 				int finalGold = 0;
 			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");

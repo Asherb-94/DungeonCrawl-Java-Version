@@ -57,6 +57,11 @@ public abstract class Scenes {
 		{
 			System.out.println("As you continue to travel into the dungeon...");
 		}
+		
+		static void Moria(  ) throws IOException {
+			Moria objMoria = new Moria();
+			
+		}
 	
 
 	static void potionScene() {

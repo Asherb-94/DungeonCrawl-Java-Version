@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class Moria {
-	Hero hero = new Hero("me", 5, 5, 5);
+	Hero hero;
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	Random random = new Random();
 	
@@ -87,7 +87,7 @@ public class Moria {
 	}
 	
 	
-	private Moria() throws IOException{
+	public Moria() throws IOException{
 		System.out.println("You come to a dead end.");
 		System.out.println("(A) Turn around\n(B) Investigate further");
 		
