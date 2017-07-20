@@ -43,22 +43,25 @@ public class DungeonCrawl extends Scenes{
 	{
      //Final Monster Health and Strength 
 	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */
-	  else if ( scene== 1 ) scene01(  2, 2 );// Bat 2 2
-	  else if ( scene== 2 ) scene02(  0, 0 );// Non fighting scene 
-	  else if ( scene== 3 ) scene03(  3, 3 );// Mouse 
-	  else if ( scene== 4 ) scene04(  4, 4 );// Pumpkin 
-	  else if ( scene== 5 ) scene05(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
-	  else if ( scene== 6 ) scene07(  0, 0 ); // BoulderScene, makes monster in class 
-	  else if ( scene== 7 ) scene06(  5, 5 ); // Shrek  (fight)
-	  else if ( scene== 8 ) scene08(  7, 10 );// Old Man (fight) 
-	  else if ( scene== 9 ) scene09(  1, 1 );// Revenge (fight) only exception to rule because of mult monsters in class  **Should match loop down below the last scene** 
+	  else if ( scene== 1 ) BatScene(  2, 2 );// Bat 2 2
+	  else if ( scene== 2 ) SmallChestScene(  0, 0 );// Non fighting scene 
+	  else if ( scene== 3 ) MouseScene(  3, 3 );// Mouse 
+	  else if ( scene== 4 ) PumpkinScene(  4, 4 );// Pumpkin 
+	  else if ( scene== 5 ) WizardScene(  1, 1 );// The Wizard, only exception to rule because of mult monsters in class 
+	  else if ( scene== 6 ) BoulderScene(  0, 0 ); // BoulderScene, makes monster in class 
+	  else if ( scene== 7 ) Shrek  ( 5  ,  5); // Shrek  (fight)
+	  else if ( scene== 8 ) OldManScene(  7, 10 );// Old Man (fight) 
+	  else if ( scene== 9 ) WizardRevengeScene(  1, 1 );// Revenge (fight) only exception to rule because of mult monsters in class  **Should match loop down below the last scene** 
 
 	  else
 	  {
-	    System.out.print(" More to come! (If Rob helps out) ");
+	    System.out.print(" More to come! ");
 	  }
 	  
 }
+
+
+
 
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
@@ -106,7 +109,7 @@ public class DungeonCrawl extends Scenes{
 			    objRIP.display();
 			  }
 			  
-			  if(scene == 10 && hero.getHitPoints()>=1)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED 
+			  if(scene == 9 && hero.getHitPoints()>=1)//MAKE SURE TO UPDATE WHILE SCENES ARE BEING ADDED 
 			  {
 				int finalGold = 0;
 			    System.out.print("\n\n  You reach the end of the mine and find 100 pieces of gold\n\n");

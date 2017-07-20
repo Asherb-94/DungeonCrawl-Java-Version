@@ -6,14 +6,14 @@ import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Scene05 {
+public class WizardScene {
 	//TODO make global hero or pass it as parameter
 	DungeonCrawl obj = new DungeonCrawl();
 	Hero hero;
     //char[] buffer = new char[132];
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	
-	public Scene05() throws IOException{
+	public WizardScene() throws IOException{
 		System.out.println("You enter a room full of sparkling purple crystals.\nThey glint in the light of your torch.");
 		System.out.println("Sitting in a geode in the middle of the cavernous room is a strange looking figure... \n\nA wizard.");
 		System.out.println("\n**********");
@@ -92,8 +92,12 @@ public class Scene05 {
     	    	Monster wizard = new Monster("Wizard", 10, 10, 100);
     	    	wizard.Summary();
     	    	sortie srt = new sortie(hero, wizard);
-    	    	hero.setGold(hero.getGold()+100);
-    	    	hero.setKey(hero.getKey()+1);
+    	    	if (wizard.getHitPoints() <=0)
+    	    	{
+    	    		hero.setGold(hero.getGold()+100);
+        	    	hero.setKey(hero.getKey()+1);
+    	    	}
+    	    	
     	    }
         }
         //obj.heroSummary();
@@ -101,6 +105,6 @@ public class Scene05 {
 	}
 	
 	public static void main(String args[]) throws IOException{
-		Scene05 sc = new Scene05();
+		WizardScene sc = new WizardScene();
 	}
 }

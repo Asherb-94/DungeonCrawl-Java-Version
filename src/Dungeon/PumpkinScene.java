@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-public class Scene04 {
+public class PumpkinScene {
 	  //TODO global hero object
     static DungeonCrawl objDungeon = new DungeonCrawl();
 	static Hero hero;
@@ -12,7 +12,7 @@ public class Scene04 {
 	int monsterStr;
 	
 	// start //
-	public Scene04(int monsterHit, int monsterStr) throws IOException{
+	public PumpkinScene(int monsterHit, int monsterStr) throws IOException{
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
@@ -59,6 +59,6 @@ public class Scene04 {
 	}
 	
 	public static void main(String[] args) throws IOException{
-		Scene04 sc = new Scene04(5, 4);
+		PumpkinScene sc = new PumpkinScene(5, 4);
 	}
 }

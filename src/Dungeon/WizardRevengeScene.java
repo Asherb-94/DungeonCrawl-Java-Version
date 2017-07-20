@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Scene09 {//Revenge
+public class WizardRevengeScene {//Revenge
 	Hero hero;
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	DungeonCrawl objDungeon = new DungeonCrawl();
@@ -24,7 +24,7 @@ public class Scene09 {//Revenge
     	}
 	}
 	
-	public Scene09() throws IOException{
+	public WizardRevengeScene() throws IOException{
 		System.out.println("You enter a room that is pitch black except for pure white sunlight coming from a hole in the ceiling.");
 		System.out.println("As your eyes adjust to the light, you realize that the light is illuminating a coffin.\n");
 		System.out.println("And a man kneeling beside it. You cannot see his face.");
@@ -75,7 +75,7 @@ public class Scene09 {//Revenge
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scene09 rev = new Scene09();
+		WizardRevengeScene rev = new WizardRevengeScene();
 	}
 
 }
