@@ -15,7 +15,7 @@ public class Scene04 {
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
-		System.out.println();
+		//System.out.println();
 		
 		this.monsterHit = monsterHit;
 		this.monsterStr = monsterStr;
@@ -54,6 +54,7 @@ public class Scene04 {
 	private void rightChoice(){
 		System.out.println("You find 10 gold pieces.");
 		hero.setGold(hero.getGold()+10);
+		hero.Summary();
 	}
 	
 	public static void main(String[] args) throws IOException{
