@@ -20,6 +20,7 @@ public class Moria {
 		
 		sortie srtie = new sortie(hero, orc);
 		
+		//TODO fix sortie method
 		// if the hero won the fight (they gain strength if they do)
 		if (hero.getStrength() > strength){
     		System.out.println("You rifle through the orc's belongings.");
