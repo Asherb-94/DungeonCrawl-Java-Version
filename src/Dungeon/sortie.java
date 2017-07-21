@@ -26,6 +26,7 @@ public class sortie
         int runAway = 0;
         int hit = 0;
         int runAwayMonster = 0;
+        int monsterHoldGround = 0;
 
 
         while (bothAlive == 1 && runAway == 0 && runAwayMonster == 0)
@@ -125,7 +126,7 @@ public class sortie
                 System.out.print("\n\t\t\tYou moan... and die...\n\n");
                 bothAlive = 0;
             }
-            else if (monster.getHitPoints() <= 0)
+            else if (monster.getHitPoints() == 0)
             {
                 System.out.print("\tThe " + monster.getName() + " drops dead.\n\n");
                 bothAlive = 0;
@@ -133,8 +134,12 @@ public class sortie
             obj.heroSummary();//obj is the call to hero class 
             monster.Summary();
             
+            if (monster.getName().equals("belrog"))//the belrog wont run away ***
+            {
+            	monsterHoldGround = 1;
+            }
             //The monster hears its mommy calling
-            if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1)
+            if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1 && monsterHoldGround == 0)
             {
             	BufferedReader inputSub = new BufferedReader (new InputStreamReader(System.in));
             	

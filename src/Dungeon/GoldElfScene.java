@@ -29,6 +29,15 @@ public class GoldElfScene {
 				hero.setGold(hero.getGold()+100);
 				System.out.println("As you turn to leave the dungeon you see the golden puddle bubbling and rising out of the ground."
 						+ "As you watch, horrified, it turns into a golden elf which quickly shoots an arrow at you.\n");
+				if(hero.getMaxStrength() > 8)
+				{
+					System.out.println("\n\nYou are quick enough to dodge the attack!\n");
+				}
+				else
+				{
+					System.out.println("\n\nYou are not quick enough to dodge the attack!\t (-1 hit point)");
+					hero.setHitPoints(hero.getHitPoints()-1);//x-1/x
+				}
 				
 				Monster monster2 = new Monster("Golden Elf", monsterHit+4, monsterStr-2, 0);
 				objDungeon.heroSummary();

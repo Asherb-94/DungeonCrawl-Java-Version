@@ -17,7 +17,9 @@ public class DungeonCrawl extends Scenes{
 	{
 		System.out.println((Hero.getName() +": " + Hero.getHitPoints() + "/" 
 				  + Hero.getMaxHitPoints() + "HP; " + Hero.getStrength() + "/" + Hero.getMaxStrength() 
-				  + " ST; " + Hero.getGold() + " Gold"));
+				  + " ST; " + Hero.getGold() + " Gold   " + "Key(s) " + Hero.getKey() ));
+		
+		
 	}
 	
 	public void monsterSummary()

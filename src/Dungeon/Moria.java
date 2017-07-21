@@ -39,7 +39,7 @@ public class Moria {
 	} // end orc
 	
 	private void balrogSortie() throws IOException{
-    	Monster balrog = new Monster("balrog", 15, 10, 0);
+    	Monster balrog = new Monster("balrog", 20, 13, 0);
     	objDungeon.heroSummary();
     	balrog.Summary();
 		sortie sort = new sortie(hero, balrog);

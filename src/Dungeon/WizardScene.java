@@ -89,12 +89,13 @@ public class WizardScene {
     	    }
     	    else {
     	    	Monster wizard = new Monster("Wizard", 10, 8, 100);
+    	    	objDungeon.heroSummary();
     	    	wizard.Summary();
     	    	sortie srt = new sortie(hero, wizard);
     	    	if (wizard.getHitPoints() <=0)
     	    	{
     	    		hero.setGold(hero.getGold()+100);
-        	    	hero.setKey(hero.getKey()+1);
+        	    	hero.setKey(hero.getKey()+1);//Key is a plot key 
     	    	}
     	    	
     	    }

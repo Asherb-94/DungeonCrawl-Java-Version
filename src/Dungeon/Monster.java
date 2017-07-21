@@ -25,7 +25,15 @@ public class Monster {
 	  }
 
 	public static int getHitPoints() {
-		return hitPoints;
+		if (hitPoints < 0)
+		{
+			return hitPoints = 0;
+		}
+		else
+		{
+			return hitPoints;
+		}
+		
 	}
 
 	public void setHitPoints(int hitPoints) {
