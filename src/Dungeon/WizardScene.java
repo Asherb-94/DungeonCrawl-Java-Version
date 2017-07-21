@@ -12,7 +12,7 @@ public class WizardScene {
 	Hero hero;
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	
-	public WizardScene() throws IOException{
+	public WizardScene() throws IOException, InterruptedException{
 		System.out.println("You enter a room full of sparkling purple crystals.\nThey glint in the light of your torch.");
 		System.out.println("Sitting in a geode in the middle of the cavernous room is a strange looking figure... \n\nA wizard.");
 		System.out.println("\n**********");
@@ -96,6 +96,7 @@ public class WizardScene {
     	    	{
     	    		hero.setGold(hero.getGold()+100);
         	    	hero.setKey(hero.getKey()+1);//Key is a plot key 
+        	    	System.out.println("\n\nYou find a key!");
     	    	}
     	    	
     	    }
@@ -104,7 +105,7 @@ public class WizardScene {
 		
 	}
 	
-	public static void main(String args[]) throws IOException{
+	public static void main(String args[]) throws IOException, InterruptedException{
 		WizardScene sc = new WizardScene();
 	}
 }

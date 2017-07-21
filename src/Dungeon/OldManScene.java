@@ -12,7 +12,7 @@ public class OldManScene {
 		DungeonCrawl objDungeon = new DungeonCrawl();
 		
 		// start //
-		public OldManScene(int monsterHit, int monsterStr) throws IOException{
+		public OldManScene(int monsterHit, int monsterStr) throws IOException, InterruptedException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			this.monsterHit = monsterHit;
 			this.monsterStr = monsterStr;
@@ -51,7 +51,7 @@ public class OldManScene {
 		}
 		
 		
-		public static void main(String[] args) throws IOException{
+		public static void main(String[] args) throws IOException, InterruptedException{
 			OldManScene sc = new OldManScene(5, 4);
 		}
 }

@@ -12,7 +12,7 @@ public class PumpkinScene {
 	int monsterStr;
 	
 	// start //
-	public PumpkinScene(int monsterHit, int monsterStr) throws IOException{
+	public PumpkinScene(int monsterHit, int monsterStr) throws IOException, InterruptedException{
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You continue deeper into the mine.");
 		System.out.println("The tunnel splits into two passages. Which one do you take? Left or Right? (L or R)");
@@ -30,7 +30,7 @@ public class PumpkinScene {
 			rightChoice();
 	}
 	
-	private void leftChoice() throws IOException{
+	private void leftChoice() throws IOException, InterruptedException{
 		BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("You see a sign in front of an orange bag: ");
 		System.out.println("     Trick or Treat!!!\n\n");
@@ -59,7 +59,7 @@ public class PumpkinScene {
 		objDungeon.heroSummary();
 	}
 	
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException, InterruptedException{
 		PumpkinScene sc = new PumpkinScene(5, 4);
 	}
 }

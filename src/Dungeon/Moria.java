@@ -11,7 +11,7 @@ public class Moria {
 	Random random = new Random();
 	DungeonCrawl objDungeon = new DungeonCrawl();
 	
-	private void orc() throws IOException{
+	private void orc() throws IOException, InterruptedException{
 		System.out.println("You head back the way you came. Strangely, you don't remember walking so long to get back...");
 		System.out.println("\nYou round a corner to find an orc with a huge, spiked club in hand. He runs toward you.");
 		
@@ -38,7 +38,7 @@ public class Moria {
 		}	
 	} // end orc
 	
-	private void balrogSortie() throws IOException{
+	private void balrogSortie() throws IOException, InterruptedException{
     	Monster balrog = new Monster("balrog", 20, 13, 0);
     	objDungeon.heroSummary();
     	balrog.Summary();
@@ -50,7 +50,7 @@ public class Moria {
 
 	}
 	
-	private void balrog() throws IOException{
+	private void balrog() throws IOException, InterruptedException{
 		System.out.println("The door slowly swings open to reveal an enormous room. It seems to be the remains of a working mine.");
 		System.out.println("Everything is covered in dust now. You explore until you come to a bridge across a dark chasm.");
 		System.out.println("Across the bridge, there's a door that looks like it leads to the way out! Finally!!");
@@ -91,7 +91,7 @@ public class Moria {
 	}
 	
 	
-	public Moria() throws IOException{
+	public Moria() throws IOException, InterruptedException{
 		System.out.println("You come to a dead end.");
 		System.out.println("(A) Turn around\n(B) Investigate further");
 		
@@ -130,7 +130,7 @@ public class Moria {
     	objDungeon.heroSummary();		
 	} // end moria
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		Moria moria = new Moria();
 
 	}

@@ -6,7 +6,7 @@ public class Shrek {
 	
 	Hero hero;
 	
-	public Shrek(int monsterHit, int monsterStr ) throws IOException{//Fighting Scene BOSS 
+	public Shrek(int monsterHit, int monsterStr ) throws IOException, InterruptedException{//Fighting Scene BOSS 
 		System.out.println("As you continue into the cave, the floor starts getting muddier.");
 		System.out.println("A stench fills your nostrils like none you've ever smelled.");
 		System.out.println("You round a corner and see a hut with a huge, green monster standing outside of it.");
@@ -50,7 +50,7 @@ public class Shrek {
 		
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		Shrek shrek = new Shrek(0, 0);
 
 	}

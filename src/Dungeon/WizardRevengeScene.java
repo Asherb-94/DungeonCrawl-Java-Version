@@ -9,7 +9,7 @@ public class WizardRevengeScene {//Revenge
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	DungeonCrawl objDungeon = new DungeonCrawl();
 	
-	private void fight() throws IOException{
+	private void fight() throws IOException, InterruptedException{
 		Monster wizBro = new Monster("Old Wizard", 7, 6, 0);
 		objDungeon.heroSummary();
 		wizBro.Summary();
@@ -25,7 +25,7 @@ public class WizardRevengeScene {//Revenge
     	}
 	}
 	
-	public WizardRevengeScene() throws IOException{
+	public WizardRevengeScene() throws IOException, InterruptedException{
 		System.out.println("You enter a room that is pitch black except for pure white sunlight coming from a hole in the ceiling.");
 		System.out.println("As your eyes adjust to the light, you realize that the light is illuminating a coffin.\n");
 		System.out.println("And a man kneeling beside it. You cannot see his face.");
@@ -74,7 +74,7 @@ public class WizardRevengeScene {//Revenge
 		
 	} // end main scene
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		WizardRevengeScene rev = new WizardRevengeScene();
 	}

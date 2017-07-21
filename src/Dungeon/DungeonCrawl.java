@@ -36,13 +36,13 @@ public class DungeonCrawl extends Scenes{
 	
 	public static void pauseProg(){
 		System.out.println("\n\n    (Hit Enter)");
-		@SuppressWarnings("resource")
+		//@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		keyboard.hasNextLine();
 	}
 	
 	
-	static void sceneSelect( int scene ) throws IOException
+	static void sceneSelect( int scene ) throws IOException, InterruptedException
 	{
      //Final Monster Health and Strength 
 	  if      ( scene== 0 ) scene00();//1 gold   				/* monster-hitpoints, monster-strength  */

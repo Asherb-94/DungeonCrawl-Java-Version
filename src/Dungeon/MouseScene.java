@@ -11,7 +11,7 @@ public class MouseScene {
 	static Hero hero;
 	DungeonCrawl objDungeon = new DungeonCrawl();
 
-	public MouseScene(int monsterHit, int monsterStr) throws IOException{//Fighting Scene 
+	public MouseScene(int monsterHit, int monsterStr) throws IOException, InterruptedException{//Fighting Scene 
 		System.out.println("\n\n\n\nYou continue deeper into the mine.");
 		System.out.println("What is THAT??\n.\n.\n.\n.\n");
 		System.out.println("A mouse!");

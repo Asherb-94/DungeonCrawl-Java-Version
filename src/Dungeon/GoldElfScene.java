@@ -9,7 +9,7 @@ public class GoldElfScene {
 		int monsterStr;
 		DungeonCrawl objDungeon = new DungeonCrawl();
 	
-		public GoldElfScene(int monsterHit, int monsterStr) throws IOException{
+		public GoldElfScene(int monsterHit, int monsterStr) throws IOException, InterruptedException{
 			System.out.println("You walk into what looks like an empty dungeon. "
 					+ "\nThere is a chest in the far corner of the room."
 					+ "\nYou suddenly feel like something is watching you and become very tense."

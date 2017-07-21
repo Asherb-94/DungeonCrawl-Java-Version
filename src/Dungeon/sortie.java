@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 //|  A fight between the hero and a  monster
 //|
@@ -17,8 +18,18 @@ public class sortie
     DungeonCrawl obj = new DungeonCrawl();
     
     Scanner scan = new Scanner(System. in );
+    
+public static void printWithDelays(String data, TimeUnit unit, long delay) throws InterruptedException {
+	    
+	  for (char ch:data.toCharArray()) 
+	    {
+	        System.out.print(ch);
+	        unit.sleep(delay);
+	    }
+  }
+
   
-    public sortie(Hero hero, Monster monster) throws IOException
+    public sortie(Hero hero, Monster monster) throws IOException, InterruptedException
     {
         int monsterThrow = random.nextInt(monster.getStrength());
         int heroThrow;
@@ -142,10 +153,11 @@ public class sortie
             if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1 && monsterHoldGround == 0)
             {
             	BufferedReader inputSub = new BufferedReader (new InputStreamReader(System.in));
-            	
-                System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
-                System.out.print("\n\t\tQuick! Now's your chance to chase " + monster.getName() +" and kill it\n\n");
-                System.out.print("\n\nWhat do you do? [A]: Chase \t [B]: Don't Chase");
+            	printWithDelays("\n\t\tThe ",TimeUnit.MILLISECONDS, 80);System.out.print(monster.getName());printWithDelays(" turns tail and runs away!\n\n",TimeUnit.MILLISECONDS, 80);
+                //System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
+                //System.out.print("\n\t\tQuick! Now's your chance to chase the " + monster.getName() +" and kill it\n\n");
+            	printWithDelays("\n\t\tQuick! Now's your chance to chase the ",TimeUnit.MILLISECONDS, 80);System.out.print(monster.getName());;printWithDelays(" and kill it\n\n",TimeUnit.MILLISECONDS, 80);
+            	printWithDelays("\n\nWhat do you do? [A]: Chase \t [B]: Don't Chase\n",TimeUnit.MILLISECONDS, 75);
 				String answerSub = inputSub.readLine();
 				
 				if(answerSub.equals("a") || answerSub.equals("A"))

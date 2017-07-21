@@ -8,9 +8,10 @@ import java.util.Random;
 public class BoulderScene {
 	//TODO global hero object
 		static Hero hero;
+		DungeonCrawl objDungeon = new DungeonCrawl();
 		
 		// start //
-		public BoulderScene(int monsterHit, int monsterStr) throws IOException{
+		public BoulderScene(int monsterHit, int monsterStr) throws IOException, InterruptedException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			System.out.println("You continue deeper into the mine.");
 			System.out.println("You come up to a very large boulder.");
@@ -26,14 +27,16 @@ public class BoulderScene {
 				goAround();
 		}
 		
-		private void climb() throws IOException{
+		private void climb() throws IOException, InterruptedException{
 			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			if(hero.getStrength() > 6){
 				System.out.println("You climb to the top of the boulder and spot a golden chest. Would you like to open the chest? (y or n)");
 				String ans = input.readLine();
 				if (ans.equals("y") || ans.equals("Y")){
 					System.out.println("You open the chest and a skeleton hand reaches for you!");
-					Monster monster = new Monster("Skeleton Hand", 1, 1, 0);
+					Monster monster = new Monster("Skeleton Hand", 10, 3, 0);
+					objDungeon.heroSummary();
+					monster.Summary();
 					sortie sortie = new sortie(hero, monster);
 					if(hero.getHitPoints()> 0){
 						System.out.println("You find 5 gold coins in the chest.");
@@ -65,7 +68,7 @@ public class BoulderScene {
 			}
 		}
 		
-		public static void main(String[] args) throws IOException{
+		public static void main(String[] args) throws IOException, InterruptedException{
 			BoulderScene sc = new BoulderScene(0,0);
 			//goAround();
 		}
