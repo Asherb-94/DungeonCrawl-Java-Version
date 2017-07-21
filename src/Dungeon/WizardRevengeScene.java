@@ -11,6 +11,7 @@ public class WizardRevengeScene {//Revenge
 	
 	private void fight() throws IOException{
 		Monster wizBro = new Monster("Old Wizard", 7, 6, 0);
+		objDungeon.heroSummary();
 		wizBro.Summary();
 		sortie srt = new sortie(hero, wizBro);
 		System.out.println("You stand over the old wizard's body. He looks peaceful next to his brother.");

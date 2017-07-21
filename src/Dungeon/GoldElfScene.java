@@ -7,6 +7,7 @@ public class GoldElfScene {
 		Hero hero;
 		int monsterHit;
 		int monsterStr;
+		DungeonCrawl objDungeon = new DungeonCrawl();
 	
 		public GoldElfScene(int monsterHit, int monsterStr) throws IOException{
 			System.out.println("You walk into what looks like an empty dungeon. "
@@ -17,7 +18,8 @@ public class GoldElfScene {
 					+ "\nThe liquid gold slowly forms into a solid gold human holding a golden sword. He lunges at you!");
 			
 			Monster monster = new Monster("Golden Human-Like Thing", monsterHit, monsterStr, 0);
-			
+			objDungeon.heroSummary();
+			monster.Summary();
 			sortie sortie = new sortie(hero, monster);
 			
 			if(hero.getHitPoints() > 0 && monster.getHitPoints() < 1){

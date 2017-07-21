@@ -136,11 +136,25 @@ public class sortie
             //The monster hears its mommy calling
             if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1)
             {
-            	runAwayMonster = 1;
+            	BufferedReader inputSub = new BufferedReader (new InputStreamReader(System.in));
+            	
                 System.out.print("\n\t\tThe " + monster.getName() + " turns tail and runs away!\n\n");
-                System.out.print("\n\t\tQuick! Now's your chance to chase it and kill it\n\n");
-                System.out.print("\n\nWhat do you do? [A]: Chase \t [B}: Don't Chase");
-                //String answerSub1 = inputSub.readLine();
+                System.out.print("\n\t\tQuick! Now's your chance to chase " + monster.getName() +" and kill it\n\n");
+                System.out.print("\n\nWhat do you do? [A]: Chase \t [B]: Don't Chase");
+				String answerSub = inputSub.readLine();
+				
+				if(answerSub.equals("a") || answerSub.equals("A"))
+				{
+					System.out.println("\nYou caught up with " + monster.getName() + "!");
+					System.out.println("\nThe fight continues!\n");
+					obj.heroSummary();
+					monster.Summary();
+					
+				}
+				else{
+					runAwayMonster = 1;
+					 System.out.print("\n\t\tThe " + monster.getName() + " gets away!\n\n");
+				}
                 
             }
             //end while
