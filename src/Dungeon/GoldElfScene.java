@@ -18,6 +18,7 @@ public class GoldElfScene {
 					+ "\nThe liquid gold slowly forms into a solid gold human holding a golden sword. He lunges at you!");
 			
 			Monster monster = new Monster("Golden Human-Like Thing", monsterHit, monsterStr, 0);
+			System.out.println();
 			objDungeon.heroSummary();
 			monster.Summary();
 			sortie sortie = new sortie(hero, monster);
@@ -27,9 +28,11 @@ public class GoldElfScene {
 				System.out.println("You look into the golden chest and take the 100 gold pieces sitting on the bottom.");
 				hero.setGold(hero.getGold()+100);
 				System.out.println("As you turn to leave the dungeon you see the golden puddle bubbling and rising out of the ground."
-						+ "As you watch, horrified, it turns into a golden elf which quickly shoots an arrow at you.");
+						+ "As you watch, horrified, it turns into a golden elf which quickly shoots an arrow at you.\n");
 				
 				Monster monster2 = new Monster("Golden Elf", monsterHit+4, monsterStr-2, 0);
+				objDungeon.heroSummary();
+				monster2.Summary();
 				sortie sortie2 = new sortie(hero, monster2);
 				
 				if(hero.getHitPoints() > 0 && monster.getHitPoints() < 1){

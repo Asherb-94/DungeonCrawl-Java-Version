@@ -99,7 +99,7 @@ public class sortie
                 }
                 else
                 {
-                	System.out.print("\n\n\tYou duck from the monster's blow.\n");
+                	System.out.print("\n\n\tYou duck from the blow.\n");
                     monsterThrow = random.nextInt(monster.getStrength());
                     heroThrow = random.nextInt(hero.getStrength());
                     if (hero.getHitPoints() < hero.getMaxHitPoints() && heroThrow > 3 * monsterThrow / 4)

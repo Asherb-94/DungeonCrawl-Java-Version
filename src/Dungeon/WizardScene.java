@@ -8,9 +8,8 @@ import java.util.Scanner;
 
 public class WizardScene {
 	//TODO make global hero or pass it as parameter
-	DungeonCrawl obj = new DungeonCrawl();
+	DungeonCrawl objDungeon = new DungeonCrawl();
 	Hero hero;
-    //char[] buffer = new char[132];
 	BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 	
 	public WizardScene() throws IOException{
@@ -30,15 +29,13 @@ public class WizardScene {
 		//Scanner scan = new Scanner(System.in);
         String answer = input.readLine();
 	    Random random = new Random();
-	    //int toss = random.nextInt(2);
-	    int toss = 0;//TEST
+	    int toss = random.nextInt(2);
+
 	    
         if ( answer.equals("a")|| answer.equals("A")){
     		System.out.println("You uncork the potion. Immediately, you get a whiff of blood.");
     		System.out.println("\tThis is the blood of your slain opponents. Do you drink? (y or n)");
-    		
-    		//answer = scan.next(".").charAt(0);
-    	    //buffer[0] = answer;
+
     		String answerOne = input.readLine();
     	    
     	    if (answerOne.equals("y")|| answerOne.equals("Y")){
@@ -54,6 +51,8 @@ public class WizardScene {
     	    	System.out.println("It looks to be a horrible mutant made of all the monsters you've slain.");
     	    	Monster demon = new Monster("Demon", 6, 5, 3);
     	    	sortie srtie = new sortie(hero, demon);
+    	    	objDungeon.heroSummary();
+    	    	demon.Summary();
     	    }    
         }
         

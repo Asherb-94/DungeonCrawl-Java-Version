@@ -47,6 +47,7 @@ public class PumpkinScene {
 		else {
 			System.out.println("\nOh no! You have angered the Great Pumpkin!!\n");
 			Monster monster = new Monster("Great Pumpkin", monsterHit, monsterStr, 0);
+			objDungeon.heroSummary();
 			monster.Summary();
 			sortie sortie = new sortie(hero, monster);
 		}

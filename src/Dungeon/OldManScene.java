@@ -9,6 +9,7 @@ public class OldManScene {
 		Hero hero;
 		int monsterHit;
 		int monsterStr;
+		DungeonCrawl objDungeon = new DungeonCrawl();
 		
 		// start //
 		public OldManScene(int monsterHit, int monsterStr) throws IOException{
@@ -38,6 +39,7 @@ public class OldManScene {
 					System.out.println("I'm sorry but that is not correct.");
 					System.out.println("The old man suddenly pulls out his wand!");
 					Monster monster = new Monster("Old Man", monsterHit, monsterStr, 10);
+					objDungeon.heroSummary();
 					monster.Summary();
 					sortie sortie = new sortie(hero, monster);
 				}
