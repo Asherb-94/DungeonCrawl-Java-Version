@@ -38,8 +38,8 @@ public class BatScene {
 
 		    if ( toss < 5 )
 		    {
-		    	System.out.println("The bat is not quite dead! It bites! You die of rabies.");
-		    	hero.setHitPoints(0);
+		    	System.out.println("The bat is not quite dead! It bites! You loose 1HP");
+		    	hero.setHitPoints(hero.getHitPoints()-1);
 		    }
 		    else
 		    {
