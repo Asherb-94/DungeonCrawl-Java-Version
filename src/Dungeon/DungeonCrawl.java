@@ -124,7 +124,7 @@ public class DungeonCrawl extends Scenes{
 			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 75);
 			System.out.print(sceneCount++);
 			printWithDelays(" *****",TimeUnit.MILLISECONDS, 75);
-			System.out.println();
+			//System.out.println();
 			sceneSelect(  scene ); 
 			scene++;//goes to the next scene 
 			

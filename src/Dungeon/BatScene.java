@@ -10,7 +10,7 @@ public class BatScene {
 	 DungeonCrawl objDungeon = new DungeonCrawl();
 	
 	public BatScene(int monsterHit, int monsterStr) throws IOException, InterruptedException{
-		System.out.println("What is that fluttering sound?");
+		System.out.println("\nWhat is that fluttering sound?");
 		System.out.println("OH NO! It's a saber-tooth bat!");
 		Monster monster = new Monster("Bat", monsterHit, monsterStr, 0);
 		objDungeon.heroSummary();
