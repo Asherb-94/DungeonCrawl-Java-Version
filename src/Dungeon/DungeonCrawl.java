@@ -1,3 +1,6 @@
+/*
+ * @authos: Asher, Logan, & Lydia 
+ */
 package Dungeon;
 import java.io.IOException;
 import java.util.Scanner;
