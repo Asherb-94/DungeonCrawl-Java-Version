@@ -38,6 +38,7 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
         int hit = 0;
         int runAwayMonster = 0;
         int monsterHoldGround = 0;
+        int flag = 1;
 
 
         while (bothAlive == 1 && runAway == 0 && runAwayMonster == 0)
@@ -89,7 +90,7 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
                 
                
                 //Hero Runs Away
-                else if (answer.equals("r")|| answer.equals("R"))
+                if (answer.equals("r")|| answer.equals("R"))
                 {
                 	
                     System.out.print("\n\tYou run away from the " + monster.getName());
@@ -109,7 +110,8 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
                     	 runAway = 1; 
                     }   
                 }
-                else
+                //Hero Ducks 
+                if (answer.equals("d")|| answer.equals("D"))
                 {
                 	System.out.print("\n\n\tYou duck from the blow.\n");
                     monsterThrow = random.nextInt(monster.getStrength());
@@ -130,7 +132,15 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
                         System.out.print("\tYou loose a hit point!\n\n");
                         hero.setHitPoints(hero.getHitPoints()-1);
                     }
-                }  
+                } 
+                
+                //User types wrong key 
+                if (!answer.equals("d")|| !answer.equals("D") || !answer.equals("r")|| !answer.equals("R") || !answer.equals("f") || !answer.equals("F"))
+                {
+                	System.out.println("Please enter correct key.");
+                }
+                
+                
           //Determine the outcome of this exchange of blows
             if (hero.getHitPoints() <= 0)
             {
@@ -149,6 +159,7 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
             {
             	monsterHoldGround = 1;
             }
+            
             //The monster hears its mommy calling
             if (monster.getHitPoints() > 0 && monster.getHitPoints() < hero.getHitPoints() && (int)(Math.random() * 10) + 1 == 1 && monsterHoldGround == 0)
             {
