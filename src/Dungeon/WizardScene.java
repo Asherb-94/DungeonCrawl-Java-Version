@@ -50,7 +50,7 @@ public class WizardScene {
     	    	System.out.println("You set the potion down. Out of of the bottle comes a demon from hell.");
     	    	System.out.println("It looks to be a horrible mutant made of all the monsters you've slain.");
     	    	Monster demon = new Monster("Demon", 6, 5, 3);
-    	    	sortie srtie = new sortie(hero, demon);
+    	    	sortie monster = new sortie(hero, demon);
     	    	objDungeon.heroSummary();
     	    	demon.Summary();
     	    }    
@@ -61,15 +61,14 @@ public class WizardScene {
         	System.out.println("Suddenly feeling woozy, you fall to the ground.");
         	System.out.println("As you slowly fade out of consciousness, you hear the cackling of the wizard.");
         	hero.setHitPoints(0);
-        	//RIP rip = new RIP();
-        	//rip.display();
         }
         
         else {
         	System.out.println("You uncork the potion and gulp it down eagerly.");
         	System.out.println("It tastes like nothing. The wizard nods approvingly.");
         	System.out.println("\tYou have done well. Now you must choose one final time.");
-        	System.out.println("\tTake the gold I have in my hand and leave or fight me for incredible power. (a or b)");
+        	System.out.println("\tTake the gold I have in my hand and leave or fight me for incredible power.");
+        	System.out.println("\tChoose [A] for gold Or Choose [B] for incredible power");
         	
         	String answerTwo = input.readLine();
     	    
@@ -101,7 +100,6 @@ public class WizardScene {
     	    	
     	    }
         }
-        //obj.heroSummary();
 		
 	}
 	

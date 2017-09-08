@@ -94,7 +94,7 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
                 {
                 	
                     System.out.print("\n\tYou run away from the " + monster.getName());
-                    System.out.print("\tThe " + monster.getName() + "throws a shurikin at your back!!\n");
+                    System.out.print("\nThe " + monster.getName() + "throws a shurikin at your back!!\n");
                     monsterThrow = (int)(Math.random() * 4) + 1;
                     //monsterThrow = 4;
                     if (monsterThrow > 3 )
@@ -135,7 +135,7 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
                 } 
                 
                 //User types wrong key 
-                if (!answer.equals("d")|| !answer.equals("D") || !answer.equals("r")|| !answer.equals("R") || !answer.equals("f") || !answer.equals("F"))
+                if ( !answer.equalsIgnoreCase("f") && !answer.equalsIgnoreCase("r") && !answer.equalsIgnoreCase("d") ) 
                 {
                 	System.out.println("Please enter correct key.");
                 }
@@ -192,13 +192,13 @@ public static void printWithDelays(String data, TimeUnit unit, long delay) throw
         
         if (runAway == 0 && hero.getHitPoints() > 0) 
         {
-            System.out.print("\n\n\tYou gain strength and health from your experience\n");
+            System.out.print("\n\n\n\tYou gain strength and health from your experience\n");
             hero.setMaxHitPoints(hero.getMaxHitPoints()+1);
             hero.setHitPoints(hero.getHitPoints()+1);
             
             hero.setMaxStrength(hero.getMaxStrength()+1);
             hero.setStrength(hero.getStrength()+1);
-           
+           //TO DO spaze up when gaining strenght and health
             obj.heroSummary();
             System.out.print("\n");
         }

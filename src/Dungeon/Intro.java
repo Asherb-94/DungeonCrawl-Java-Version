@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class Intro {
 
-	public static final char[] buffer = new char[132];
+	//public static final char[] buffer = new char[132];
 	public Hero objHero;
 	
 	public void intro() throws IOException
 	{
 		int flag = 1;
-		char answer;
+		//char answersub;
 		String test = "abcd";
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\n\n");
@@ -24,11 +24,14 @@ public class Intro {
 		
 		while (flag == 1)
 		{
+			BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 			System.out.println(" Do you wish to continue? (y or n) ");
-		    answer = scan.next(".").charAt(0);
-		    buffer[0] = answer;
+		    //answersub = scan.next(".").charAt(0);
+		    //buffer[0] = answer;
+			System.out.println();
+            String answer = input.readLine();
 		    
-		    if (buffer[0] == 'n' || buffer[0] == 'N')
+            if (answer.equals("n") || answer.equals("N"))
 		    {
 		    	System.out.println("  You turn tail and run.  ");
 		    	System.out.println("  From the trees around you, wood nymphs giggle derisively. \n\n");
@@ -36,7 +39,7 @@ public class Intro {
 		    	objHero.setHitPoints(0);
 		    	flag = 0;
 		    }
-		    if (buffer[0] == 'y' || buffer[0] =='Y')
+            if (answer.equals("y") || answer.equals("Y"))
 		    {
 		    	
 		    	int flagSub = 1;
@@ -44,8 +47,10 @@ public class Intro {
 		    	while (flag == 1)// loop for name length
 		    	{
 			    	System.out.println("  Enter your name, Hero: ");
-			    	Scanner objName = new Scanner(System.in);
-			    	Hero objHero = new Hero(objName.next(),4,4,0,0);
+			    	//Scanner objName = new Scanner(System.in);
+			    	String objName = input.readLine();
+			    	//Hero objHero = new Hero(objName.next(),4,4,0,0);
+			    	Hero objHero = new Hero(objName,4,4,0,0);
 			    	
 			    	if (objHero.getName().isEmpty() || objHero.getName().length() < test.length() )//test is 4 
 			    	{
