@@ -39,8 +39,7 @@ public class DungeonCrawl extends Scenes{
 	
 	public static void pauseProg(){
 		System.out.println("\n\n    (Hit Enter)");
-		//@SuppressWarnings("resource")
-		Scanner keyboard = new Scanner(System.in);
+	    Scanner keyboard = new Scanner(System.in);
 		keyboard.hasNextLine();
 	}
 	
@@ -105,6 +104,7 @@ public class DungeonCrawl extends Scenes{
 		Splash objSplash = new Splash();//create obj splash
 		objSplash.splash();//calls constructor and displays title 
 	    
+		
 		System.out.println("\n\n      (Hit Enter)");
 		if (scan.hasNextLine()){
 		}
@@ -121,7 +121,7 @@ public class DungeonCrawl extends Scenes{
 			
 			//go to the current scene
 			//System.out.println("    ****" + "Scene: "+ (sceneCount++) + " ****    ");
-			printWithDelays(" ***** Scene: ",TimeUnit.MILLISECONDS, 75);
+			
 			System.out.print(sceneCount++);
 			printWithDelays(" *****",TimeUnit.MILLISECONDS, 75);
 			//System.out.println();
