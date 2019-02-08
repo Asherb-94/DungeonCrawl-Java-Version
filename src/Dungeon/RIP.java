@@ -1,3 +1,4 @@
+//RIP Class
 package Dungeon;
 
 public class RIP {
