@@ -96,5 +96,6 @@ public class Hero {
 	public static void setKey(int key){
 		Hero.key = key;
 	}
+	
 	  
 }
